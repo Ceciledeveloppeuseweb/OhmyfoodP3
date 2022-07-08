@@ -1,0 +1,39 @@
+@mixin mobile {
+    @media  screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+@mixin tablette {
+    @media screen and (max-width: map-get($breakpoints, tablette)) {
+        @content;
+    }
+}
+
+
+
+@mixin ombre($color: lightness($color-secondarie), $size: $bloc-shadow-size) {
+    color: $color;
+    box-shadow: $size $size $color;
+    
+}
+
+@mixin btn {
+    padding: $padding;
+    color: $color-white;
+    background-color: $color-secondary;
+    cursor: pointer;
+    &:hover{
+        background-color: $color-accent;
+
+    }
+    &:active{
+        background-color: $color-accent;
+    }
+}
+@mixin img-size {
+    width: 100%;
+}
+@mixin fond {
+    
+}
+

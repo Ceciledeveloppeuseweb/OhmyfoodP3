@@ -1,0 +1,17 @@
+.btn{
+    color: $color-white;
+    background-color: $color-secondary;
+    padding: $padding;
+    width: 50%;
+    margin: auto;
+    &_accueil{
+        padding: auto 10px;
+        width: 60%;
+        text-align: center;
+        margin: auto;
+    }
+    &:hover{
+        background-color: crimson;
+
+    }
+}

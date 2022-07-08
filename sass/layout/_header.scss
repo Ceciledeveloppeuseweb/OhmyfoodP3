@@ -1,0 +1,13 @@
+header{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    @include mobile{
+        text-align: center;
+    }
+    &img{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+}

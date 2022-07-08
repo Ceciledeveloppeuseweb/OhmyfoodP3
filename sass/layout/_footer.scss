@@ -1,0 +1,13 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    color: $color-white;
+    background-color: black;
+    margin-top: 20px;
+    margin-left: 20px;
+    & div{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+    }
+}

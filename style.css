@@ -2,7 +2,6 @@
 *::before,
 *::after {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -12,33 +11,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.Logo-site, h1, h2 {
-  font-family: "Shrikhand", serif;
-  font-weight: 900;
-}
-
-.logo-site {
-  font-size: 24px;
-}
-
-h1 {
-  font-size: 20px;
-}
-
-* {
-  margin: 0;
-}
-
-p {
-  font-family: "Roboto", sans-serif;
-}
-
 .btn {
   color: #fff;
   background-color: #FF79DA;
   padding: auto 20px;
-  width: 50%;
-  margin: auto;
+  width: 60%;
+  margin: 30px auto;
+  border-radius: 25px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
 }
 .btn_accueil {
   padding: auto 10px;
@@ -50,72 +32,90 @@ p {
   background-color: crimson;
 }
 
+.logo-accueil img {
+  width: 50%;
+  margin: 20px auto 15px;
+  font-family: "Shrikhand", serif;
+}
+
+.section-presentation h1 {
+  font-size: 28px;
+  font-family: "Shrikhand", serif;
+  width: 80%;
+  margin: 40px auto 15px;
+  text-align: center;
+  font-style: normal;
+}
+.section-presentation p {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
 .section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 30px auto;
-}
-.section_presentation {
-  align-items: center;
 }
 
-.etapes {
+.fonctionnement {
   display: flex;
   flex-direction: column;
-  height: 40px;
 }
-
-.choix {
-  display: flex;
-  flex-direction: row;
+.fonctionnement__cards {
+  position: relative;
   align-items: center;
-  margin-bottom: 15px;
-  width: 90%;
-  margin-left: 20px;
-  overflow: visible;
-  border-radius: 20px;
+  width: 95%;
+  height: 70px;
   background-color: #FF79DA;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: visible;
 }
-
-.choix_icone {
-  margin-right: 3%;
-}
-
-.choix_nbre {
-  color: white;
+.fonctionnement__cards .numero {
   background-color: #9356DC;
-  padding: 3px 8px;
+  padding: 5px 10px;
   border-radius: 50%;
-  margin-right: 3%;
+  position: absolute;
+  left: -10px;
+  top: 30%;
+}
+.fonctionnement__cards .icone {
+  position: absolute;
+  left: 15%;
+  top: 35%;
+  font-size: 22px;
+}
+.fonctionnement__cards .texte {
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  font-weight: bold;
 }
 
-.choix_texte {
+.restos {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
   margin: auto;
 }
-
-.bloc_resto {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-
-.bloc_resto a {
-  width: 40%;
-}
-
-.resto {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  overflow: hidden;
-}
-
-.resto img {
+.restos a {
   width: 100%;
-  object-fit: cover;
-  height: 250px;
-  top: 0;
+  text-decoration: none;
+}
+
+.resto__img img {
+  position: relative;
+  width: 100%;
+}
+
+.btn-img {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: aqua;
 }
 
 footer {
@@ -139,29 +139,18 @@ footer div {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: auto;
-  font-size: 16px;
+  margin: 15px auto;
+  font-size: 20px;
   font-weight: bold;
 }
-@media screen and (max-width: 599px) {
-  .form {
-    width: 100%;
-  }
-}
-
-input {
-  width: 90%;
+.form__icone {
+  margin-right: 20px;
 }
 
 header {
   display: flex;
   flex-direction: row;
   text-align: left;
-}
-@media screen and (max-width: 599px) {
-  header {
-    text-align: center;
-  }
 }
 headerimg {
   font-size: 14px;

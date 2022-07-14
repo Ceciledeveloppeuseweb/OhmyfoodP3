@@ -1,21 +1,50 @@
 .btn{
     color: $color-white;
-    background-color: $color-secondary;
-    padding: $padding;
-    width: 60%;
+    padding: 15px 10px;
+    width: 50%;
+    max-width: 300px;
+    background-color: $color-primary;
     margin: 30px auto;
     border-radius: 25px;
-    height: 50px;
-    font-size: 16px;
+    height: 55px;
+    font-size: 18px;
     border: none;
-    &_accueil{
-        padding: auto 10px;
-        width: 60%;
-        text-align: center;
-        margin: auto;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    &:valid{
+        &::after{
+            opacity: 0;
+        }
     }
-    &:hover{
-        background-color: crimson;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 25px;
+        background-color: lighten($color: $color-primary, $amount: 10%);
+        opacity: 1;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+    &--accueil{
+        width: 62%;
+    }
+    @include tablette{
+        font-size: 20px;
+    }
+    @include desktop{
+        &:hover{
+            &::after{
+                opacity: 1;
+            }
 
+        }
+       
     }
+    
+   
 }

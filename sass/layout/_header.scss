@@ -1,11 +1,43 @@
-header{
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    
-    &img{
-        font-size: 14px;
-        font-weight: bold;
+.entete{
+    height: 80px;
+    &__logo{
+        text-align: center;
+        padding-top: 30px;
+        height: 100%;
+        
     }
+    &--retour{
+        position: relative;
+        &__icone{
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            font-size: 24px;
+        }
+        &__logo{
+            position: absolute;
+            top: 30px;
+            left: 110px;
+            width: 85%;
+        }
+    }
+}
+.logo>img{
+    width: 50%;
     
+    &--accueil>img{
+        margin: 20px auto 10px;
+        
+        
+
+    }
+    &--retour>img{
+        margin-left: 40%;
+
+
+    }
+    &--footer>img{
+        width: 20%;
+
+    }
 }

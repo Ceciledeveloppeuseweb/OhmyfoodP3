@@ -7,31 +7,16 @@
 @mixin desktop {
     @media screen and (min-width: map-get($breakpoints, desktop)){
         @content;
-        
     }
+}
+@mixin proprietes-carte {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px 
+}
+
+
+
     
-}
-
-
-
-@mixin ombre($color: lightness($color-secondary), $size: $bloc-shadow-size) {
-    color: $color;
-    box-shadow: $size $size $color;
-    
-}
-
-@mixin btn {
-    padding: $padding;
-    color: $color-white;
-    background-color: $color-secondary;
-    cursor: pointer;
-    &:hover{
-        background-color: $color-accent;
-
-    }
-    &:active{
-        background-color: $color-accent;
-    }
-}
-
 

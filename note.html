@@ -13,34 +13,36 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-    <header class="logo logo-fleche">
-        <a href="/accueil.html">
-            <i class="flèche-retour fas fa-arrow-alt-left"></i>   
+    <header class="entete entete--retour">
+        <a class="entete__retour__icone" href="/accueil.html">
+            <i class="fleche fa-solid fa-arrow-left"></i>
         </a>
-        <img src="images/logo/ohmyfood.png" alt="logo du site ohmyfood"></h1>
+        <div class="logo entete__retour__logo">
+            <img src="images/logo/ohmyfood.png" alt="logo du site ohmyfood"/>
+        </div>
     </header>
 
-    <main>
+    <main class="bloc-menu">
     
-        <div class="baniere-img">
-            <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg">
+        <div class="bloc-menu__photo">
+            <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photo d'un plat">
         </div>
 
-        <section class="carte">
+        <div class="bloc-menu__carte">
             
-            <div class="carte__titre">
-                <h1>
-                    La note enchantée
-                </h1>
-                <i class="btn-coeur fa-regular fa-heart"></i>
+            <div class="nom-resto">
+                <h1>La note enchantée</h1>
+                <div>
+                    <i class="btn-coeur fa-regular fa-heart"></i>
+                </div>
             </div>
 
-            <section class="carte__entrees">
-                <h1>ENTRÉES</h1>
+            <div class="entrees">
+                <p>ENTRÉES</p>
                     
                 <a href="#" class="entree">
                     <div class="entree__intitule">
-                        <h2>Ravioles de foie gras</h2>
+                        <p><em>Ravioles de foie gras</em></p>
                         <p>Accompagnés de leur crème à la truffe</p>
                     </div>
                             
@@ -54,7 +56,7 @@
 
                 <a href="#" class="entree">
                     <div class="entree__intitule">
-                        <h2>Caviar osciètre</h2>
+                        <p><em>Caviar osciètre</em></p>
                         <p>Sur blini à la farine de blé noir</p>
                     </div>
                             
@@ -68,7 +70,7 @@
 
                 <a href="#" class="entree">
                     <div class="entree__intitule">
-                        <h2>Homard et espuma de potiron</h2>
+                        <p><em>Homard et espuma de potiron</em></p>
                         <p>Mariné aux zestes d'orange</p>
                     </div>
                             
@@ -82,7 +84,7 @@
 
                 <a href="#" class="entree">
                     <div class="entree__intitule">
-                        <h2>Foie gras de canard cuit entier</h2>
+                        <p><em>Foie gras de canard cuit entier</em></p>
                         <p>Confiture de figue et pain toasté</p>
                     </div>
                             
@@ -94,14 +96,14 @@
                     </div>
                 </a>
 
-            </section>
+            </div>
 
-            <section class="carte__plats">
-                <h1>PLATS</h1>
+            <div class="plats">
+                <p>PLATS</p>
 
                 <a href="#" class="plat">
                     <div class="plat__intitule">
-                        <h2>Noix de coquilles Saint-Jacques</h2>
+                        <p><em>Noix de coquilles Saint-Jacques</em></p>
                         <p>Sur lit de purée de céleri-rave</p>
                     </div>
                             
@@ -115,7 +117,7 @@
 
                 <a href="#" class="plat">
                     <div class="plat__intitule">
-                        <h2>Langoustine poêlée</h2>
+                        <p><em>Langoustine poêlée</em></p>
                         <p>Purée de patate douce</p>
                     </div>
                             
@@ -129,7 +131,7 @@
 
                 <a href="#" class="plat">
                     <div class="plat__intitule">
-                        <h2>Mijoté de queue de boeuf</h2>
+                        <p><em>Mijoté de queue de boeuf</em></p>
                         <p>Et riz sauvage aux zests de citron</p>
                     </div>
                             
@@ -141,15 +143,15 @@
                     </div>
                 </a>
                     
-            </section>
+            </div>
 
 
-            <section class="carte__desserts">
-                <h1>DESSERTS</h1>
+            <div class="desserts">
+                <p>DESSERTS</p>
 
                 <a href="#" class="dessert">
                     <div class="dessert__intitule">
-                        <h2>Macaron noisette et chocolat</h2>
+                        <p><em>Macaron noisette et chocolat</em></p>
                         <p>Glace au caramel brun et sel de Guérande</p>
                     </div>
                             
@@ -163,7 +165,7 @@
 
                 <a href="#" class="dessert">
                     <div class="dessert__intitule">
-                        <h2>Baba au rhum revisité</h2>
+                        <p><em>Baba au rhum revisité</em></p>
                         <p>Avec son coulis de citron</p>
                     </div>
                             
@@ -177,7 +179,7 @@
 
                 <a href="#" class="dessert">
                     <div class="dessert__intitule">
-                        <h2>Tarte au citron meringuée</h2>
+                        <p><em>Tarte au citron meringuée</em></p>
                         <p>Destructurée</p>
                     </div>
                             
@@ -189,32 +191,32 @@
                     </div>
                 </a>
                     
-            </section>
+            </div>
 
             <button class="btn">Commander</button>
                
-        </section>
+        </div>
 
     </main>
    
    
-    <footer>
-        <div class="logo logo-footer">
-            <img src="images/logo/ohmyfood.png"/>
+    <footer class="pied-page">
+        <div class="logo pied-page__logo">
+            <img src="images/logo/ohmyfood.png" alt="logo du site"/>
         </div>
-        <div>
-            <a href="#">
-                <i class="icone-pied-page fa-solid fa-utensils"></i>
+        <div class="pied-page__liens">
+            <a class="lien" href="#">
+                <i class="lien__icone fa-solid fa-utensils"></i>
                 <p>Proposer un restaurant</p>
             </a>
-            <a href="#">
-                <i class="icone-pied-page fa-solid fa-handshake-angle"></i>
+            <a class="lien" href="#">
+                <i class="lien__icone--taille fa-solid fa-handshake-angle"></i>
                 <p>Devenir partenaire</p>
             </a>
-            <a href="#">
+            <a class="lien" href="#">
                 <p>Mentions légales</p>
             </a>
-            <a href="mailto: monadresse@mail.com">Contact</a>
+            <a class="lien" href="mailto:cecile@exemple.com">Contact</a>
         </div>
     </footer>
     

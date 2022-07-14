@@ -13,32 +13,36 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-    <header class="logo logo-fleche">
-        <a href="/accueil.html">
-            <i class="flèche-retour fas fa-arrow-alt-left"></i>   
+    <header class="entete entete--retour">
+        <a class="entete--retour__icone" href="/accueil.html">
+            <i class="fleche fa-solid fa-arrow-left"></i>
         </a>
-        <img src="images/logo/ohmyfood.png" alt="logo du site ohmyfood"></h1>
+        <div class="logo entete--retour__logo">
+            <img src="images/logo/ohmyfood.png" alt="logo du site ohmyfood"/>
+        </div>
     </header>
    
-    <main>
+    <main class="bloc-menu">
     
-        <div class="baniere-img">
-            <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg">
+        <div class="bloc-menu__photo">
+            <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo d'un plat">
         </div>
 
-        <section class="carte">
+        <div class="bloc-menu__carte">
 
-            <div class="carte_titre">
+            <div class="nom-resto">
                 <h1>La palette du goût</h1>
-                <i class="btn-coeur fa-regular fa-heart"></i>
+                <div>
+                    <i class="btn-coeur fa-regular fa-heart"></i>
+                </div>
             </div>
             
-            <section class="carte__entrees">
-                <h1>ENTRÉES</h1>
+            <div class="entrees">
+                <p>ENTRÉES</p>
 
                 <a href="#" class="entree">
                     <div class="entree__intitule">
-                        <h2>Fricassée d'escargot</h2>
+                        <p><em>Fricassée d'escargot</em></p>
                         <p>Au piment d'espelette</p>
                     </div>
                             
@@ -52,7 +56,7 @@
 
                 <a href="#" class="entree">
                     <div class="entree__intitule">
-                        <h2>Foie gras de canard mi-cuit</h2>
+                        <p><em>Foie gras de canard mi-cuit</em></p>
                         <p>Et ses copeaux de truffe noire</p>
                     </div>
                             
@@ -66,7 +70,7 @@
 
                 <a href="#" class="entree">
                     <div class="entree__intitule">
-                        <h2>Oeuf au plat</h2>
+                        <p><em>Oeuf au plat</em></p>
                         <p>Assaisonné à la truffe sur lit de caviar</p>
                     </div>
                             
@@ -78,14 +82,14 @@
                     </div>
                 </a>
 
-            </section>
+            </div>
 
-            <section class="carte__plats">
-                <h1>PLATS</h1>
+            <div class="plats">
+                <p>PLATS</p>
 
                 <a href="#" class="plat">
                     <div class="plat__intitule">
-                        <h2>Filet de boeuf aux herbes</h2>
+                        <p><em>Filet de boeuf aux herbes</em></p>
                         <p>Accompagné de sa ribambelle de légumes</p>
                     </div>
                             
@@ -99,7 +103,7 @@
 
                 <a href="#" class="plat">
                     <div class="plat__intitule">
-                        <h2>Parmentier de queue de boeuf</h2>
+                        <p><em>Parmentier de queue de boeuf</em></p>
                         <p>À la truffe noire sur sa purée de panais</p>
                     </div>
                             
@@ -113,7 +117,7 @@
 
                 <a href="#" class="plat">
                     <div class="plat__intitule">
-                        <h2>Filet de turbot</h2>
+                        <p><em>Filet de turbot</em></p>
                         <p>Aux agrumes</p>
                     </div>
                             
@@ -125,14 +129,14 @@
                     </div>
                 </a>
                    
-            </section>
+            </div>
 
-            <section class="carte__desserts">
-                <h1>DESSERTS</h1>
+            <div class="desserts">
+                <p>DESSERTS</p>
 
                 <a href="#" class="dessert">
                     <div class="dessert__intitule">
-                        <h2>Paris-Brest</h2>
+                        <p><em>Paris-Brest</em></p>
                         <p>Revisité</p>
                     </div>
                             
@@ -146,7 +150,7 @@
 
                 <a href="#" class="dessert">
                     <div class="dessert__intitule">
-                        <h2>Macaron au chocolat d'exception</h2>
+                        <p><em>Macaron au chocolat d'exception</em></p>
                         <p>Et glace à la vanille de Madasgacar</p>
                     </div>
                             
@@ -160,7 +164,7 @@
 
                 <a href="#" class="dessert">
                     <div class="dessert__intitule">
-                        <h2>Mousse au chocolat</h2>
+                        <p><em>Mousse au chocolat</em></p>
                         <p>Au piment d'Espelette et à la truffe noire</p>
                     </div>
                             
@@ -172,31 +176,31 @@
                     </div>
                 </a>
 
-            </section>
+            </div>
 
             <button class="btn">Commander</button>
 
-        </section>
+        </div>
 
     </main>
       
-    <footer>
-        <div class="logo logo-footer">
-            <img src="images/logo/ohmyfood.png"/>
+    <footer class="pied-page">
+        <div class="logo pied-page__logo">
+            <img src="images/logo/ohmyfood.png" alt="logo du site"/>
         </div>
-        <div>
-            <a href="#">
-                <i class="icone-pied-page fa-solid fa-utensils"></i>
+        <div class="pied-page__liens">
+            <a class="lien" href="#">
+                <i class="lien__icone fa-solid fa-utensils"></i>
                 <p>Proposer un restaurant</p>
             </a>
-            <a href="#">
-                <i class="icone-pied-page fa-solid fa-handshake-angle"></i>
+            <a class="lien" href="#">
+                <i class="lien__icone--taille fa-solid fa-handshake-angle"></i>
                 <p>Devenir partenaire</p>
             </a>
-            <a href="#">
+            <a class="lien" href="#">
                 <p>Mentions légales</p>
             </a>
-            <a href="mailto: monadresse@mail.com">Contact</a>
+            <a class="lien" href="mailto:cecile@exemple.com">Contact</a>
         </div>
     </footer>
     

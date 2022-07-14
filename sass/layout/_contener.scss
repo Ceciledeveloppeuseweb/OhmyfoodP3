@@ -1,213 +1,263 @@
-.logo-accueil img{
-    width: 50%;
-    
-    
-   
-}
-.presentation{
+.bloc-menu{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 40px;
-    background-color: lighten($color: $color-secondary, $amount: 24%);
-    &__titre{
-        font-size: 28px;
-        width: 80%;
-        font-weight: 900;
-        margin-top: 30px;
-        text-align: center;
+    width: 100%;
+    &__photo{
+        width: 100%;
+        & img{
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
+            @include tablette{
+                height: 320px;
+            }
+            @include desktop{
+                height: 420px;
+            }
+            
+        }
     }
-    &__texte{
-        font-size: 20px;
-        width: 90%;
-        text-align: center;
-        margin-top: 20px;
-        font-weight: normal;
-    }
-}
-.fonctionnement{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    
-    &__titre{
-        font-size: 28px;
-        font-weight: 900;
-        margin-bottom: 20px;
-        
-    }
-    &__etapes{
+    &__carte{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        background-color: lighten($color: $color-secondary, $amount: 25%);
+        border-radius: 35px 35px 0 0;
+        margin-top: -35px;
+        @include tablette{
+            border-radius: 0;
+            
+        }
     }
-
-}
-.etape{
-    position: relative;
-    width: 90%;
-    height: 80px;
-    margin: 15px auto;
-    background-color: lighten($color: $color-secondary, $amount: 24%);
-    border-radius: 25px;
-    box-shadow: 0 0 17px 4px lighten($color: $color-secondary, $amount: 18%);
-    
-    &__nbre{
-        position: absolute;
-        left: -15px;
-        top: 25px;
-        padding: 5px 10px;
-        border-radius: 50%;
-        background-color: $color-primary;
-        
-    }
-    &__icone{
-        position: absolute;
-        left: 30px;
-        top: 30px;
-        font-size: 22px;
-        color: lighten($color: $color-black, $amount: 20%);
-        
-        
-    }
-    &__texte{
-        position: absolute;
-        left: 70px;
-        top: 30px;
-        font-size: 18px;
-        font-weight: bold;
-
-    }
-}
-.restos{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    background-color: lighten($color: $color-secondary, $amount: 24%);
-    &__titre{
-        font-size: 28px;
-        font-weight: 900;
-        margin-top: 40px;
-        margin-left: 20px;
-    }
-    &__cards{
-        width: 90%;
-        margin: 20px auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        
-        
-       
-    }
-}
-.card{
-    text-decoration: none;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 270px;
-    margin-bottom: 25px;
-    border-radius: 20px;
-    background-color: $color-white;
-}
-.card__img{
-    width: 100%;
-    height: 190px;
-    position: relative;
-    
-    
-    
-    
-}
-.card__img img{
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    border-radius: 20px 20px 0 0;
-    
-    
-
-}
-.card__img p{
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 5px 10px;
-    font-size: 18px;
-    background-color: $color-tertiary;
-    
-   
 }
 
-.card__txt{
+.nom-resto{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 22px;
+    width: 90%;
+    margin: 15px auto;
+    &>h1{
+        font-size: 28px;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+.entrees{
+    display: flex;
+    flex-direction: column;
     width: 90%;
     margin: auto;
-    font-size: 20px;
-
-}
-
-.btn-coeur{
-    font-size: 28px;
-    margin-right: 10px;
-}
-
-
-p em{
-    font-style: normal;
-    font-weight: bold;
-}
-
     
-    
-footer{
+    &>p{
+        margin-bottom: 15px;
+        font-size: 20px;
+        border-bottom: 3px solid $color-tertiary;
+        
+        @include tablette{
+           @include proprietes-carte;
+        }
+        
+    }
+    &>a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
+        border-radius: 20px;
+        box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
+        margin-bottom: 15px;
+        @include tablette{
+            flex-direction: column;
+            width: 50%;
+            margin: 10px auto;
+
+        }
+        &>.entree__intitule{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 18px;
+            width: 100%;
+            margin-left: 10px;
+            padding-bottom: 20px;
+            @include tablette{
+                text-align: center;
+            }
+            &> p{
+                font-size: 18px;
+                &> em{
+                    font-size: 20px;
+                }
+            }
+            
+
+        }
+        &>.entree__prix{
+            font-size: 16px;
+            margin-right: 20px;
+            &>p{
+                margin-top: 20px;
+                font-size: 16px;
+            }
+           
+            
+        }
+
+    }
+}
+
+.coche{
+    display: none;
+    &:hover{
+        display: block;
+    }
+}
+
+
+.plats{
     display: flex;
     flex-direction: column;
-    color: $color-white;
-    background-color: lighten($color: $color-black, $amount: 20%);
-    
-   
+    width: 90%;
+    margin: auto;
+    &>p{
+        margin-bottom: 15px;
+        font-size: 20px;
+        @include tablette{
+            @include proprietes-carte
+        }
+        
+    }
+    &>a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
+        border-radius: 20px;
+        box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
+        margin-bottom: 15px;
+        @include tablette{
+            flex-direction: column;
+            width: 50%;
+            margin: 10px auto;
+            
+        }
+        &>.plat__intitule{
+            margin-top: 20px;
+            font-size: 16px;
+            width: 80%;
+            margin-left: 10px;
+            padding-bottom: 20px;
+            @include tablette{
+                text-align: center;
+            }
+            &> p{
+                font-size: 18px;
+                &> em{
+                    font-size: 20px;
+                }
+            }
+            
+
+        }
+        &>.plat__prix{
+            font-size: 16px;
+            margin-right: 20px;
+            &>p{
+                margin-top: 20px;
+            }
+           
+            
+        }
+
+    }
 }
-.logo--footer img{
-    width: 30%;
-    margin: 20px;
-    color: $color-white;
-}
-.liens{
+
+.desserts{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    margin-bottom: 40px;
-    font-size: 18px;
+    width: 90%;
+    margin: auto;
+    &>p{
+        margin-bottom: 15px;
+        font-size: 20px;
+        @include tablette{
+           @include proprietes-carte
+        }
+        
+    }
+    &>a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
+        border-radius: 20px;
+        box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
+        margin-bottom: 15px;
+        @include tablette{
+            flex-direction: column;
+            width: 50%;
+            margin: 10px auto;
+        }
+        &>.dessert__intitule{
+            margin-top: 20px;
+            
+            width: 80%;
+            margin-left: 10px;
+            padding-bottom: 20px;
+            @include tablette{
+                text-align: center;
+            }
+            
+            &> p{
+                font-size: 18px;
+                &> em{
+                    font-size: 20px;
+                }
+            }
+            
+
+        }
+        &>.dessert__prix{
+            font-size: 18px;
+            margin-right: 20px;
+            &>p{
+                margin-top: 20px;
+            }
+           
+            
+        }
+
+    }
 }
-.lien{
-    text-decoration: none;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: $color-white;
-}
-.lien__icone{
-    margin-right: 12px;
-    font-size: 14px;
-}
-.lien__icone--taille{
-    font-size: 12px;
-    margin-right: 10px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
 
 
 

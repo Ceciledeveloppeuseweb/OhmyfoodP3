@@ -12,13 +12,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" /><!--version6.1.1-->
     <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
-    <header class="entete">
-        <a class="entete__icone" href="/accueil.html">
+<body class="page-menu">
+    <header class="entete entete--retour ">
+        <a class="entete--retour__icone" href="./accueil.html">
             <i class="fleche fa-solid fa-arrow-left"></i>
         </a>
-        <div class="logo entete__logo">
-            <img class="img" src="images/logo/ohmyfood.png" alt="logo du site ohmyfood"/>
+        
+        <div class="entete--retour__img entete__img">
+            <img src="images/logo/ohmyfood.png" alt="logo du site ohmyfood"/>
         </div>
     </header>
    
@@ -32,15 +33,15 @@
 
             <div class="nom-resto">
                 <h1>La palette du goût</h1>
-                <div>
-                    <i class="coeur-remplissage fas fa-heart"></i>
-                </div>
+                <span class="coeur">
+                    <i class="coeur__remplissage fas fa-heart"></i>
+                </span>
             </div>
             
             <div class="entrees">
                 <p>ENTRÉES</p>
 
-                <a href="#" class="entree">
+                <div class="entree">
                     <div class="entree__intitule">
                         <p><em>Fricassée d'escargot</em></p>
                         <p>Au piment d'espelette</p>
@@ -48,12 +49,12 @@
                     <div class="entree__prix">
                         <p><em>25€</em></p>
                     </div> 
-                    <span class="coche entree__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="entree__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
-                <a href="#" class="entree">
+                <div class="entree">
                     <div class="entree__intitule">
                         <p><em>Foie gras de canard mi-cuit</em></p>
                         <p>Et ses copeaux de truffe noire</p>
@@ -61,12 +62,12 @@
                     <div class="entree__prix">
                         <p><em>35€</em></p>
                     </div> 
-                    <span class="coche entree__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="entree__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
-                <a href="#" class="entree">
+                <div class="entree">
                     <div class="entree__intitule">
                         <p><em>Oeuf au plat</em></p>
                         <p>Assaisonné à la truffe sur lit de caviar</p>
@@ -75,17 +76,17 @@
                     <div class="entree__prix">
                         <p><em>20€</em></p>
                     </div> 
-                    <span class="coche entree__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="entree__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
             </div>
 
             <div class="plats">
                 <p>PLATS</p>
 
-                <a href="#" class="plat">
+                <div class="plat">
                     <div class="plat__intitule">
                         <p><em>Filet de boeuf aux herbes</em></p>
                         <p>Accompagné de sa ribambelle de légumes</p>
@@ -93,12 +94,12 @@
                     <div class="plat__prix">
                         <p><em>40€</em></p>
                     </div> 
-                    <span class="coche plat__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="plat__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
-                <a href="#" class="plat">
+                <div class="plat">
                     <div class="plat__intitule">
                         <p><em>Parmentier de queue de boeuf</em></p>
                         <p>À la truffe noire sur sa purée de panais</p>
@@ -106,12 +107,12 @@
                     <div class="plat__prix">
                         <p><em>35€</em></p>
                     </div> 
-                    <span class="coche plat__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="plat__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
-                <a href="#" class="plat">
+                <div class="plat">
                     <div class="plat__intitule">
                         <p><em>Filet de turbot</em></p>
                         <p>Aux agrumes</p>
@@ -119,17 +120,17 @@
                     <div class="plat__prix">
                         <p><em>44€</em></p>
                     </div> 
-                    <span class="coche plat__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="plat__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
                    
             </div>
 
             <div class="desserts">
                 <p>DESSERTS</p>
 
-                <a href="#" class="dessert">
+                <div class="dessert">
                     <div class="dessert__intitule">
                         <p><em>Paris-Brest</em></p>
                         <p>Revisité</p>
@@ -137,12 +138,12 @@
                     <div class="dessert__prix">
                         <p><em>18€</em></p>
                     </div> 
-                    <span class="coche dessert__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="dessert__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
-                <a href="#" class="dessert">
+                <div class="dessert">
                     <div class="dessert__intitule">
                         <p><em>Macaron au chocolat d'exception</em></p>
                         <p>Et glace à la vanille de Madasgacar</p>
@@ -150,12 +151,12 @@
                     <div class="dessert__prix">
                         <p><em>22€</em></p>
                     </div> 
-                    <span class="coche dessert__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="dessert__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
-                <a href="#" class="dessert">
+                <div class="dessert">
                     <div class="dessert__intitule">
                         <p><em>Mousse au chocolat</em></p>
                         <p>Au piment d'Espelette et à la truffe noire</p>
@@ -163,10 +164,10 @@
                     <div class="dessert__prix">
                         <p><em>23€</em></p>
                     </div> 
-                    <span class="coche dessert__coche">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </a>
+                    <div class="dessert__coche">
+                        <i class="coche fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
 
             </div>
 
@@ -190,7 +191,7 @@
             <a class="lien" href="#">
                 <p>Mentions légales</p>
             </a>
-            <a class="lien" href="mailto:cecile@exemple.com">Contact</a>
+            <a class="lien" href="mailto:ohmyfood@2x.svg">Contact</a>
         </div>
     </footer>
     

@@ -12,10 +12,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" /><!--version6.1.1-->
     <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
+<body class="page-accueil">
+    <div class="chargement">
+        <span class="chargement__page"></span>
+    </div>
     <header class="entete">
-        <div class="logo entete__logo">
-            <img class="img" src="images/logo/ohmyfood.png" alt="logo du site ohmyfood">
+        <div class="entete__img">
+            <img src="images/logo/ohmyfood.png" alt="logo du site ohmyfood">
         </div>
     </header>
    
@@ -51,7 +54,7 @@
             </div>
         </div>
 
-         <div class="restos"> 
+        <div class="restos"> 
 
             <div class="restos__titre">Restaurants</div>
 
@@ -68,7 +71,7 @@
                             <p>Ménilmontant</p>
                         </div>
                         <div class="coeur">
-                            <i class="coeur-remplissage fas fa-heart"></i>
+                            <span class="coeur__remplissage fas fa-heart"></span>
                         </div>
                     </div>
                 </a>
@@ -83,9 +86,9 @@
                             <p><em>La note enchantée</em></p>
                             <p>Charonne</p>
                         </div>
-                        <div>
-                            <i class="coeur-remplissage fas fa-heart"></i>
-                        </div>
+                        <span class="coeur">
+                            <i class="coeur__remplissage fas fa-heart"></i>
+                        </span>
                     </div>
                 </a>
 
@@ -99,9 +102,9 @@
                             <p><em>À la française</em></p>
                             <p>Cité Rouge</p>
                         </div>
-                        <div>
-                            <i class="coeur-remplissage fas fa-heart"></i>
-                        </div>
+                        <span class="coeur">
+                            <i class="coeur__remplissage fas fa-heart"></i>
+                        </span>
                     </div>
                 </a>
 
@@ -114,9 +117,9 @@
                             <p><em>Le délice des sens</em></p>
                             <p>Folie-Méricourt</p>
                         </div>
-                        <div>
-                            <i class="coeur-remplissage fas fa-heart"></i>
-                        </div>
+                        <span class="coeur">
+                            <i class="coeur__remplissage fas fa-heart"></i>
+                        </span>
                     </div>
                 </a>
 
@@ -139,7 +142,7 @@
             <a class="lien" href="#">
                 <p class="lien__txt">Mentions légales</p>
             </a>
-            <a class="lien" href="mailto:cecile@exemple.com">Contact</a>
+            <a class="lien" href="mailto:ohmyfood@2x.svg">Contact</a>
         </div>
     </footer>
     

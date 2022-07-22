@@ -1,61 +1,53 @@
 .pied-page{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     color: $color-white;
     background-color: lighten($color: $color-black, $amount: 20%);
-    &__logo{
-        width: 70%;
-        margin: 20px;
-        color: $color-white;
+    
+    &__titre{
+        font-size: 20px;
+        width: 90%;
+        margin: 20px auto;
+        font-weight: 200;
+        @include tablette{
+           text-align: center;
+            margin: 20px auto 0;
+            font-size: 24px;
+        }
     }
+
     &__liens{
         display: flex;
         flex-direction: column;
-        margin-left: 20px;
+        margin: auto;
         margin-bottom: 40px;
+        width: 90%;
         font-size: 18px;
         @include tablette{
-            flex-flow: row wrap;
-            font-size: 22px;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        &>.lien{
+            text-decoration: none;
+            margin-bottom: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: $color-white;
         }
     }
    
 }
 
-.lien{
-    text-decoration: none;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: $color-white;
-    @include tablette{
-        width: 40%;
-        margin: 20px 40px;
-        text-align: center;
-    }
-    @include desktop{
-        width: 20%;
-        margin: 10px;
-    }
-    &__icone{
-        margin-right: 12px;
-        font-size: 14px;
-        @include tablette{
-            font-size: 18px;
-        }
-        &--taille{
-            font-size: 12px;
-            margin-right: 10px;
-            @include tablette{
-                font-size: 16px;
-            }
 
-        }
-
-    }
-
+.lien__icone--taille{
+    font-size: 14px;
 }
+
+
 
 
 

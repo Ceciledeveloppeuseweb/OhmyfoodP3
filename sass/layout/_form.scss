@@ -8,15 +8,9 @@
     margin: auto;
     font-size: 20px;
     font-weight: bold;
-    box-shadow: 0 0 4px 0px darken($color: $color-primary, $amount: 30%);
-    background-color: lighten($color: $color-secondary, $amount: 20%);
-    @include tablette{
-       margin-top: 20px;
-    }
-    @include desktop{
-        font-size: 22px;
-        margin-top: 0;
-    }
+    
+    background-color: lighten($color: $color-black, $amount: 92%);
+   
     &__icone{
         margin-right: 20px;
         @include desktop{

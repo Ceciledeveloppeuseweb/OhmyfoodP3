@@ -14,7 +14,6 @@
             @include desktop{
                 height: 420px;
             }
-            
         }
     }
     &__carte{
@@ -37,211 +36,250 @@
     align-items: center;
     font-size: 22px;
     width: 90%;
-    margin: 15px auto;
+    margin: 15px auto 0;
     &>h1{
         font-size: 28px;
         margin: 10px 0;
     }
 }
 
-
-
-
-
 .entrees{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: auto;
-    
+    @include disposition-menu-carte;
+    animation: apparition 2s ease-out;
+    overflow: hidden;
     &>p{
-        margin-bottom: 15px;
-        font-size: 20px;
-        border-bottom: 3px solid $color-tertiary;
-        
-        @include tablette{
-           @include proprietes-carte;
+       @include dim-intitule-plat;
+       @include tablette{
+            @include proprietes-carte;
         }
-        
-    }
-    &>a {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-decoration: none;
-        color: #000;
-        border-radius: 20px;
-        box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
-        margin-bottom: 15px;
-        @include tablette{
-            flex-direction: column;
-            width: 50%;
-            margin: 10px auto;
-
-        }
-        &>.entree__intitule{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-top: 20px;
-            font-size: 18px;
-            width: 100%;
-            margin-left: 10px;
-            padding-bottom: 20px;
-            @include tablette{
-                text-align: center;
-            }
-            &> p{
-                font-size: 18px;
-                &> em{
-                    font-size: 20px;
-                }
-            }
-            
-
-        }
-        &>.entree__prix{
-            font-size: 16px;
-            margin-right: 20px;
-            &>p{
-                margin-top: 20px;
-                font-size: 16px;
-            }
-           
-            
-        }
-
     }
 }
 
-.coche{
-    display: none;
-    &:hover{
-        display: block;
+.entree{
+    @include proprietes-choix-menu;
+    animation: apparition 2s ease-out .2s;
+    overflow: hidden;
+    @include tablette{
+        width: 60%;
+        margin: 30px auto;
+        &:hover{
+            & > .entree__intitule{
+                & > p{
+                    margin-right: 20%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                & + .entree__prix{
+                    transform: translateX(0);
+                    
+                    & + .entree__coche{
+                        transform: translateX(0);
+                        
+                        & > .coche{
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+
+        }
     }
+    &__intitule{
+       @include proprietes-intitule-plat;
+       transition: 1s;
+       & > p{
+        flex-wrap: nowrap;
+        }
+    }
+    &__prix{
+        @include proprietes-prix-plat;
+        transition: 1s;
+    }
+    &__coche{
+        @include proprietes-coche;
+        transition: 1s;
+        &>.coche{
+            display: block;
+            transform: rotate(-360deg);
+            transition: all 1s;
+        }
+    }
+    transition: 2s;
+    &:active{
+        & > .entree__intitule{
+            & > p{
+                margin-right: 20%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            & + .entree__prix{
+                transform: translateX(0);
+                
+                & + .entree__coche{
+                    transform: translateX(0);
+                    
+                    & > .coche{
+                        transform: rotate(0);
+                    }
+                }
+            }
+        }
+    }
+   
 }
 
 
 .plats{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: auto;
+    @include disposition-menu-carte;
+    animation: apparition 2s ease-out .5s;
+    overflow: hidden;
     &>p{
-        margin-bottom: 15px;
-        font-size: 20px;
-        @include tablette{
-            @include proprietes-carte
+       @include dim-intitule-plat;
+       @include tablette{
+            @include proprietes-carte;
         }
+    }
+    
+}
+
+.plat{
+    @include proprietes-choix-menu;
+    animation: apparition 2s ease-out .7s;
+    overflow: hidden;
+    @include tablette{
+        width: 60%;
+        margin: 30px auto;
+    }
+    &__intitule{
+        @include proprietes-intitule-plat;
+        transition: 1s;
         
     }
-    &>a {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-decoration: none;
-        color: #000;
-        border-radius: 20px;
-        box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
-        margin-bottom: 15px;
-        @include tablette{
-            flex-direction: column;
-            width: 50%;
-            margin: 10px auto;
-            
+    &__prix{
+       @include proprietes-prix-plat;
+       transition: 1s;
+    }
+    &__coche{
+        @include proprietes-coche;
+        transition: 1s;
+        &>.coche{
+            display: block;
+            transform: rotate(-360deg);
+            transition: all 1s;
         }
-        &>.plat__intitule{
-            margin-top: 20px;
-            font-size: 16px;
-            width: 80%;
-            margin-left: 10px;
-            padding-bottom: 20px;
-            @include tablette{
-                text-align: center;
+    }
+    transition: 2s;
+    &:active{
+        & > .plat__intitule{
+            & > p{
+                margin-right: 20%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
-            &> p{
-                font-size: 18px;
-                &> em{
-                    font-size: 20px;
+            & + .plat__prix{
+                transform: translateX(0);
+                
+                & + .plat__coche{
+                    transform: translateX(0);
+                    
+                    & > .coche{
+                        transform: rotate(0);
+                        
+                    }
                 }
             }
-            
-
         }
-        &>.plat__prix{
-            font-size: 16px;
-            margin-right: 20px;
-            &>p{
-                margin-top: 20px;
-            }
-           
-            
-        }
-
     }
 }
 
 .desserts{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: auto;
+    @include disposition-menu-carte;
+    animation: apparition 2s ease-out 1s;
+    overflow: hidden;
     &>p{
-        margin-bottom: 15px;
-        font-size: 20px;
+        @include dim-intitule-plat;
         @include tablette{
-           @include proprietes-carte
+           @include proprietes-carte;
         }
-        
-    }
-    &>a {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-decoration: none;
-        color: #000;
-        border-radius: 20px;
-        box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
-        margin-bottom: 15px;
-        @include tablette{
-            flex-direction: column;
-            width: 50%;
-            margin: 10px auto;
-        }
-        &>.dessert__intitule{
-            margin-top: 20px;
-            
-            width: 80%;
-            margin-left: 10px;
-            padding-bottom: 20px;
-            @include tablette{
-                text-align: center;
-            }
-            
-            &> p{
-                font-size: 18px;
-                &> em{
-                    font-size: 20px;
-                }
-            }
-            
-
-        }
-        &>.dessert__prix{
-            font-size: 18px;
-            margin-right: 20px;
-            &>p{
-                margin-top: 20px;
-            }
-           
-            
-        }
-
     }
 }
+
+.dessert{
+    @include proprietes-choix-menu;
+    animation: apparition 2s ease-out 1.2s;
+    overflow: hidden;
+    @include tablette{
+        width: 60%;
+        margin: 30px auto;
+    }
+    &__intitule{
+        @include proprietes-intitule-plat;
+        transition: 1s;
+    }
+    &__prix{
+        @include proprietes-prix-plat;
+        transition: 1s;
+    }
+    &__coche{
+        @include proprietes-coche;
+        transition: 1s;
+        &>.coche{
+            display: block;
+            transform: rotate(-360deg);
+            transition: all 1s;
+        }
+    }
+    transition: 2s;
+    &:active{
+        & > .dessert__intitule{
+            & > p{
+                margin-right: 20%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            & + .dessert__prix{
+                transform: translateX(0);
+                
+                & + .dessert__coche{
+                    transform: translateX(0);
+                    
+                    & > .coche{
+                        transform: rotate(0);
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+    
+
+
+
+
+
+   
+
+
+
+    
+    
+
+
+
+
+
+    
+
+
+    
+
 
 
 

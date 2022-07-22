@@ -1,50 +1,102 @@
-.btn{
-    color: $color-white;
+.btn {
+    color: white;
     padding: 15px 10px;
     width: 50%;
     max-width: 300px;
-    background-color: $color-primary;
+    background-image: linear-gradient( $color-secondary , $color-primary );
     margin: 30px auto;
-    border-radius: 25px;
+    border-radius: 30px;
     height: 55px;
     font-size: 18px;
     border: none;
     cursor: pointer;
+    opacity: 1;
+    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 70%);
+    transition: opacity .2s;
+    &:hover{
+        opacity: 0.9;
+        box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 60%);
+    }
+    &--accueil {
+        width: 62%;
+    }
+    @include tablette {
+        font-size: 20px;
+    }
+   
+}
+   
+
+
+    
+   
+
+
+
+
+.coeur{
+    height: 45px;
+    margin-right: 20px;
+    margin-top: 0;
+    width: 40px;
+    overflow: hidden;
+    text-align: center;
+    
+    
+}
+.coeur__remplissage{
+    transition: all 2s;
+    overflow: hidden;
+    -webkit-background-composite: black;
+    width: 100%;
+    
+    
+    
+    cursor: pointer;
+    display: block;
+    font-size: 24px;
+    -webkit-text-fill-color: $color-white;
+    -webkit-text-stroke-width: 2px;
     position: relative;
-    z-index: 1;
-    &:valid{
-        &::after{
-            opacity: 0;
+    &:hover{
+        &::after {
+            opacity: 1;
         }
     }
-    &::after{
+    &::after {
         content: "";
         position: absolute;
         top: 0;
-        right: 0;
-        bottom: 0;
         left: 0;
-        border-radius: 25px;
-        background-color: lighten($color: $color-primary, $amount: 10%);
-        opacity: 1;
-        z-index: -1;
-        transition: opacity 250ms;
-    }
-    &--accueil{
-        width: 62%;
-    }
-    @include tablette{
-        font-size: 20px;
-    }
-    @include desktop{
-        &:hover{
-            &::after{
-                opacity: 1;
-            }
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: all 1s;
+        animation: remplissage 1s linear;
+        background-image: linear-gradient( $color-secondary , $color-primary );
 
-        }
+    }
+}
+
+@keyframes remplissage{
+    0%{
+        transform: translateY(0%);
+        opacity: 1;
        
     }
-    
-   
+    50%{
+        transform: translateY(-40%);
+        opacity: 1;
+
+    }
+    100%{
+        transform: translateY(-100%);
+        opacity: 1;
+
+    }
 }
+
+
+
+
+

@@ -19,7 +19,7 @@
     &__carte{
         display: flex;
         flex-direction: column;
-        background-color: lighten($color: $color-secondary, $amount: 25%);
+        background-color:  lighten($color: $color-black, $amount: 93%);
         border-radius: 35px 35px 0 0;
         margin-top: -35px;
         @include tablette{
@@ -43,23 +43,137 @@
     }
 }
 
+
 .entrees{
     @include disposition-menu-carte;
-    animation: apparition 2s ease-out;
-    overflow: hidden;
+   /* animation: apparition 2s ease-out;
+    overflow: hidden;*/
     &>p{
-       @include dim-intitule-plat;
-       @include tablette{
-            @include proprietes-carte;
-        }
+        @include dim-intitule-plat;
     }
 }
 
 .entree{
-    @include proprietes-choix-menu;
-    animation: apparition 2s ease-out .2s;
+    @include dim-intitules;
+    &__intitule{
+        @include prop-contenu-plat;
+        
+        &__prix{
+            @include prop-prix;
+        }
+    }
+    &__coche{
+        @include prop-coche;
+    }
+}
+
+.plats{
+    @include disposition-menu-carte;
+   /* animation: apparition 2s ease-out;
+    overflow: hidden;*/
+    &>p{
+        @include dim-intitule-plat;
+    }
+}
+
+.plat{
+   @include dim-intitules;
+    &__intitule{
+        @include prop-contenu-plat;
+        &__prix{
+           @include prop-prix
+        }
+    }
+    &__coche{
+        @include prop-coche
+    }
+}
+
+.desserts{
+    @include disposition-menu-carte;
+   /* animation: apparition 2s ease-out;
+    overflow: hidden;*/
+    &>p{
+        @include dim-intitule-plat;
+    }
+}
+
+.dessert{
+   @include dim-intitules;
+    &__intitule{
+       @include prop-contenu-plat;
+        &__prix{
+            @include prop-prix
+        }
+    }
+    &__coche{
+        @include prop-coche
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*.entree{
+    @include proprietes-choix-menu;*//**/
+   /* animation: apparition 2s ease-out .7s;
     overflow: hidden;
-    @include tablette{
+    transition: all 1s;*/
+   /* &__intitule{
+       @include proprietes-intitule-plat;
+        &__prix{
+            @include proprietes-prix-plat;
+            transition: all 1s;
+        }
+    }
+    &__coche{
+        @include proprietes-coche;
+        transition: all 1s;
+        &>.coche{
+            display: block;
+            transform: rotate(-360deg);
+           transition: all 1s;
+        }
+    }
+  /*  &:active{
+       
+        & > .entree__intitule{
+            & > h2{
+                margin-right: 20%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            & + .entree__intitule__prix{
+                &>p{
+                    margin-right: 20%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                &>p em{
+                    transform: translateX(0);
+                }
+                & + .entree__coche{
+                    transform: translateX(0);
+                    
+                    & > .coche{
+                        transform: rotate(0);
+                        
+                    }
+                }
+            }
+        }
+    }*/
+   /* @include tablette{
         width: 60%;
         margin: 30px auto;
         &:hover{
@@ -73,8 +187,9 @@
                 & + .entree__prix{
                     transform: translateX(0);
                     
-                    & + .entree__coche{
-                        transform: translateX(0);
+                    & + .entree__coche{*/
+                        /*transform: translateX(0);*/
+                      /*  animation: coche-viensla .5s linear forwards;
                         
                         & > .coche{
                             transform: rotate(0);
@@ -85,49 +200,6 @@
 
         }
     }
-    &__intitule{
-       @include proprietes-intitule-plat;
-       transition: 1s;
-       & > p{
-        flex-wrap: nowrap;
-        }
-    }
-    &__prix{
-        @include proprietes-prix-plat;
-        transition: 1s;
-    }
-    &__coche{
-        @include proprietes-coche;
-        transition: 1s;
-        &>.coche{
-            display: block;
-            transform: rotate(-360deg);
-            transition: all 1s;
-        }
-    }
-    transition: 2s;
-    &:active{
-        & > .entree__intitule{
-            & > p{
-                margin-right: 20%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-            & + .entree__prix{
-                transform: translateX(0);
-                
-                & + .entree__coche{
-                    transform: translateX(0);
-                    
-                    & > .coche{
-                        transform: rotate(0);
-                    }
-                }
-            }
-        }
-    }
-   
 }
 
 
@@ -141,25 +213,25 @@
             @include proprietes-carte;
         }
     }
-    
 }
-
 .plat{
     @include proprietes-choix-menu;
     animation: apparition 2s ease-out .7s;
     overflow: hidden;
-    @include tablette{
-        width: 60%;
-        margin: 30px auto;
-    }
     &__intitule{
         @include proprietes-intitule-plat;
         transition: 1s;
+        &>p{
+            margin-bottom: 5px;
+           }
         
     }
     &__prix{
        @include proprietes-prix-plat;
        transition: 1s;
+       &>p{
+        font-size: 14px;
+       }
     }
     &__coche{
         @include proprietes-coche;
@@ -170,7 +242,6 @@
             transition: all 1s;
         }
     }
-    transition: 2s;
     &:active{
         & > .plat__intitule{
             & > p{
@@ -183,7 +254,7 @@
                 transform: translateX(0);
                 
                 & + .plat__coche{
-                    transform: translateX(0);
+                    animation: coche-viensla .5s linear forwards;
                     
                     & > .coche{
                         transform: rotate(0);
@@ -191,6 +262,33 @@
                     }
                 }
             }
+        }
+    }
+    @include tablette{
+        width: 60%;
+        margin: 30px auto;
+        &:hover{
+            & > .plat__intitule{
+                & > p{
+                    margin-right: 20%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                & + .plat__prix{
+                    transform: translateX(0);
+                    
+                    & + .plat__coche{*/
+                        /*transform: translateX(0);*/
+                     /*   animation: coche-viensla .5s linear forwards;
+                        
+                        & > .coche{
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
@@ -209,19 +307,22 @@
 
 .dessert{
     @include proprietes-choix-menu;
-    animation: apparition 2s ease-out 1.2s;
+    animation: apparition 2s ease-out .7s;
     overflow: hidden;
-    @include tablette{
-        width: 60%;
-        margin: 30px auto;
-    }
     &__intitule{
         @include proprietes-intitule-plat;
         transition: 1s;
+        &>p{
+            margin-bottom: 5px;
+           }
+        
     }
     &__prix{
-        @include proprietes-prix-plat;
-        transition: 1s;
+       @include proprietes-prix-plat;
+       transition: 1s;
+       &>p{
+        font-size: 14px;
+       }
     }
     &__coche{
         @include proprietes-coche;
@@ -232,7 +333,6 @@
             transition: all 1s;
         }
     }
-    transition: 2s;
     &:active{
         & > .dessert__intitule{
             & > p{
@@ -245,7 +345,7 @@
                 transform: translateX(0);
                 
                 & + .dessert__coche{
-                    transform: translateX(0);
+                    animation: coche-viensla .5s linear forwards;
                     
                     & > .coche{
                         transform: rotate(0);
@@ -255,9 +355,110 @@
             }
         }
     }
+    @include tablette{
+        width: 60%;
+        margin: 30px auto;
+        &:hover{
+            & > .dessert__intitule{
+                & > p{
+                    margin-right: 20%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                & + .dessert__prix{
+                    transform: translateX(0);
+                    
+                    & + .dessert__coche{*/
+                        /*transform: translateX(0);*/
+                     /*   animation: coche-viensla .5s linear forwards;
+                        
+                        & > .coche{
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}*/
+
+
+
+
+@keyframes apparition{
+    0%{
+        transform: translateY(900px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes coche-viensla{
+    0%{
+        transform: translateX(50px);
+        opacity: 0;
+       
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+       
+    }
+   
 }
 
 
+
+
+/*menu test*/
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    width: 100%;
+    
+    margin-bottom: 20px;
+    border-radius: 20px;
+    
+}
+.menu__intitule{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+   
+}
+.menu__intitule__prix{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: normal;
+    margin-right: 10px;
+}
+.menu__coche{
+    width: 15%;
+    background-color: $color-tertiary;
+    font-size: 28px;
+    text-align: center;
+    align-items: center;
+    display: none;
+
+}
     
 
 

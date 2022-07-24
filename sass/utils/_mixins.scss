@@ -9,19 +9,14 @@
         @content;
     }
 }
-@mixin proprietes-carte {
-    width: 100px;
-    margin: auto;
-    text-align: center;
-    margin-top: 20px 
-}
+
 
 @mixin dim-intitule-plat {
     border-bottom: 3px solid $color-tertiary;
     margin-top: 20px;
-    width: 50px;
+    width: 47px;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 @mixin disposition-menu-carte{
@@ -29,39 +24,75 @@
     flex-direction: column;
     width: 90%;
     margin: auto;
+    margin-bottom: 20px;
 }
 
-@mixin proprietes-choix-menu{
-    opacity: 1;
+@mixin dim-intitules{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: aquamarine;
+    margin-top: 15px;
     cursor: pointer;
     border-radius: 20px;
-    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 85%);
-    margin-bottom: 15px;
-    height: 70px;
+    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 90%);
 }
-
-@mixin proprietes-intitule-plat{
+@mixin prop-contenu-plat{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin: 10px;
     width: 90%;
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 12px;
-    margin-right: -60px;
-    transition: 2s linear;
+}
+@mixin prop-prix{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+}
+@mixin prop-coche{
+    width: 18%;
+    background-color: $color-tertiary;
+    color: $color-white;
+    padding: 15px 15px;
+    font-size: 24px;
+    display: none;
 }
 
-@mixin proprietes-prix-plat{
-    width: 15%;
-    margin-top: 42px;
-    margin-right: -10px;
+
+/*@mixin proprietes-intitule-plat{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+    
+   
+   
+    
+}*/
+/*@mixin proprietes-carte {
+    width: 100px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px 
+}*/
+
+/*@mixin proprietes-prix-plat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: normal;
+    margin-right: 10px;
     transform: translateX(100%);
-    transition: 2s linear;
-    flex-wrap: nowrap;
-}
+    
+   
+    
+}*/
 
-@mixin proprietes-coche {
+/*@mixin proprietes-coche {
     width: 15%;
     font-size: 26px;
     padding-top: 25px;
@@ -71,8 +102,8 @@
     border-radius: 0 20px 20px 0;
     overflow: hidden;
     transform: translateX(100%);
-    transition: 2s linear;
-}
+    
+}*/
 
 
 

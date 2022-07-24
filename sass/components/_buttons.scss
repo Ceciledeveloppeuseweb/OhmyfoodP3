@@ -3,7 +3,8 @@
     padding: 15px 10px;
     width: 50%;
     max-width: 300px;
-    background-image: linear-gradient( $color-secondary , $color-primary );
+    background: linear-gradient(355deg, rgba(147,86,220,1) 13%, rgba(242,115,207,1) 90%);
+   /* background-image: linear-gradient( $color-secondary , $color-primary );*/
     margin: 30px auto;
     border-radius: 30px;
     height: 55px;
@@ -49,50 +50,40 @@
     overflow: hidden;
     -webkit-background-composite: black;
     width: 100%;
-    
-    
-    
     cursor: pointer;
     display: block;
     font-size: 24px;
     -webkit-text-fill-color: $color-white;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 1px;
     position: relative;
-    &:hover{
-        &::after {
-            opacity: 1;
-        }
+    &:active{
+        background: linear-gradient(355deg, rgba(147,86,220,1) 13%, rgba(242,115,207,1) 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: unset;
+        -webkit-text-fill-color: linear-gradient( $color-secondary 20%, $color-primary 10%);
+        animation: remplissage 2000ms;
     }
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        opacity: 0;
-        transition: all 1s;
-        animation: remplissage 1s linear;
-        background-image: linear-gradient( $color-secondary , $color-primary );
-
-    }
+    
 }
 
 @keyframes remplissage{
     0%{
-        transform: translateY(0%);
-        opacity: 1;
-       
+        opacity: 0;
+    }
+    25%{
+       opacity: 0.2;
     }
     50%{
-        transform: translateY(-40%);
-        opacity: 1;
-
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.8;
     }
     100%{
-        transform: translateY(-100%);
+        
         opacity: 1;
-
     }
 }
 

@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 40px;
-    background-color:  lighten($color: $color-secondary, $amount: 24%);
+   /* background-color:  lighten($color: $color-secondary, $amount: 24%);*/
     @include desktop{
         height: 300px;
         margin-bottom: 50px;
@@ -34,20 +34,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 20px;
-    
-    margin-bottom: 40px;
-    
-    
+    width: 90%;
+    margin: auto;
     
     &__titre{
         font-size: 28px;
         font-weight: 900;
         margin-bottom: 20px;
-        @include tablette{
-            font-size: 30px;
-            margin-left: 2%;
-        }
+        
         @include desktop{
             text-align: center;
             margin-bottom: 30px;
@@ -58,6 +52,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        
         @include tablette{
             flex-flow: row wrap;
             margin-bottom: 30px;
@@ -72,9 +67,9 @@
     margin: 15px auto;
     background-color: lighten($color: $color-secondary, $amount: 25%);
     border-radius: 25px;
-    box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
+    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 85%);
     @include tablette{
-        width: 25%;
+        width: 40%;
     }
     
     &__nbre{
@@ -97,7 +92,7 @@
         color: lighten($color: $color-black, $amount: 30%);
         @include tablette{
             font-size: 24px;
-            left: 45px;
+            
         }
         &--couleur{
             color: $color-primary;
@@ -111,31 +106,37 @@
         font-size: 18px;
         font-weight: bold;
         @include tablette{
-            font-size: 22px;
-            left: 90px;
+            
+            left: 25%;
+           
         }
-
     }
 }
 .restos{
-    width: 100%;
+    
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    background-color: lighten($color: $color-secondary, $amount: 25%);
+    background-color: lighten($color: $color-black, $amount: 95%);
     &__titre{
         font-size: 28px;
         font-weight: 900;
-        margin-top: 40px;
-        margin-left: 20px;
+        width: 90%;
+        margin: 50px auto 0;
+        
+        
+        @include tablette{
+            
+        }
         @include desktop{
-            margin-left: 5%;
+           
             
         }
     }
     &__cards{
         width: 90%;
-        margin: 20px auto;
+        margin: auto;
+        margin-top: 15px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -157,8 +158,8 @@
     height: 270px;
     margin-bottom: 25px;
     border-radius: 20px;
-    box-shadow: map-get($map: $shadow-size, $key: bloc) lighten($color: $color-secondary, $amount: 20%);
-    background-color: $color-white;
+    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 85%);
+    
     @include tablette{
         width: 40%;
     }
@@ -211,3 +212,88 @@
     }
 
 }
+
+
+.page-accueil{
+    &:active{
+        background-image: linear-gradient( $color-secondary 50%, $color-primary 50%);
+        opacity: 0;
+        &.chargement{
+            opacity: 1;
+            
+           
+            &::after{
+                opacity: 1;
+                animation: loader 3s linear 3;
+                transform: rotate(3turn) scale(1);
+            }
+        }
+    }
+    &.chargement{
+        width: 100%;
+        height: 300px;
+        border-radius: 50%;
+        border-bottom-color: $color-primary;
+        border-top-color: lighten($color: $color-secondary, $amount: 30%) ;
+        border: 10px solid $color-secondary;
+        position: relative;
+        opacity: 0;
+        display: block;
+        &.__page{
+            position: absolute;
+            top: 7%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            border-radius: 50%;
+            opacity: 1;
+
+        }
+    }
+       
+    &::after{
+        content: "X";
+        width: 90%;
+        height: 60vh;
+        border: 10px solid black;
+        border-radius: 50%;
+        border: 10px solid black;
+        opacity: 0;
+        transition: all 2s;
+        position: absolute;
+        top: 7%;
+        left: 5%;
+        background-color: aqua;
+        transform: rotate(1turn) scale(0);
+        transition: all 3s;
+        display: block;
+        
+    }
+    
+}
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg) scale(1) ;
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg) scale(0);
+        opacity: 0;
+    }
+}
+
+/*@keyframes body{
+    0%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}*/
+
+
+
+
+

@@ -1,3 +1,22 @@
+@charset "UTF-8";
+/*propriétés du titre des sections entree plat dessert*/
+/*disposition des cards de la section*/
+/*propriétés contenu de la card*/
+/*propriétés de l'intitulé de la card*/
+/*propriétés descriptif avec prix*/
+/*propriétes de la coche dans la card*/
+/*@mixin proprietes-coche {
+    width: 15%;
+    font-size: 26px;
+    padding-top: 25px;
+    padding-left: 15px;
+    color: $color-white;
+    background-color: $color-tertiary;
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+    transform: translateX(100%);
+
+}*/
 /*@mixin proprietes-intitule-plat{
     width: 100%;
     display: flex;
@@ -26,18 +45,6 @@
     transform: translateX(100%);
 
 
-
-}*/
-/*@mixin proprietes-coche {
-    width: 15%;
-    font-size: 26px;
-    padding-top: 25px;
-    padding-left: 15px;
-    color: $color-white;
-    background-color: $color-tertiary;
-    border-radius: 0 20px 20px 0;
-    overflow: hidden;
-    transform: translateX(100%);
 
 }*/
 *,
@@ -146,7 +153,6 @@ h2{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: unset;
-  -webkit-text-fill-color: linear-gradient(#FF79DA 20%, #9356DC 10%);
   animation: remplissage 2000ms;
 }
 
@@ -223,8 +229,8 @@ h2{
   width: 90%;
   margin: auto;
   margin-bottom: 20px;
-  /* animation: apparition 2s ease-out;
-   overflow: hidden;*/
+  animation: apparition 2s ease-out;
+  overflow: hidden;
 }
 .entrees > p {
   border-bottom: 3px solid #99E2D0;
@@ -238,32 +244,79 @@ h2{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: aquamarine;
-  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 0 5px 10px 0px #e6e6e6;
+  box-shadow: 0 4px 6px 0px #d9d9d9;
+  animation: apparition 2s ease-out 0.2s;
+  transition: all 1s linear;
 }
 .entree__intitule {
   display: flex;
   flex-direction: column;
   font-size: 12px;
-  margin: 10px;
-  width: 90%;
+  margin: 10px 20px;
+  width: 100%;
+  transition: all 1s;
 }
 .entree__intitule__prix {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 14px;
+  width: 100%;
+  transition: all 1s linear;
+  width: 100%;
+}
+.entree__intitule__prix > .prix {
+  transition: all 1s linear;
 }
 .entree__coche {
   width: 18%;
   background-color: #99E2D0;
+  overflow: hidden;
   color: #fff;
-  padding: 15px 15px;
+  padding-top: 18px;
+  padding-left: 12px;
+  border-radius: 0 20px 20px 0;
   font-size: 24px;
   display: none;
+  transform: translateX(100%);
+  transition: all 1s;
+}
+.entree__coche > .coche {
+  transform: rotate(-360deg);
+}
+.entree:hover > .entree__intitule h2 {
+  margin-right: 20%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 1s;
+}
+.entree:hover > .entree__intitule .entree__intitule__prix {
+  transition: all 1s;
+}
+.entree:hover > .entree__intitule .entree__intitule__prix > .descriptif {
+  transition: all 1s;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 20%;
+}
+.entree:hover > .entree__intitule .entree__intitule__prix > .prix {
+  transform: translateX(0);
+  transition: all 1s;
+}
+.entree:hover > .entree__coche {
+  transform: translateX(0);
+  animation: coche-viensla 1s;
+  display: block;
+}
+.entree:hover > .entree__coche > .coche {
+  transform: rotate(0deg);
+  display: block;
 }
 
 .plats {
@@ -272,8 +325,8 @@ h2{
   width: 90%;
   margin: auto;
   margin-bottom: 20px;
-  /* animation: apparition 2s ease-out;
-   overflow: hidden;*/
+  animation: apparition 2s ease-out 0.4s;
+  overflow: hidden;
 }
 .plats > p {
   border-bottom: 3px solid #99E2D0;
@@ -287,32 +340,76 @@ h2{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: aquamarine;
-  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 0 5px 10px 0px #e6e6e6;
+  box-shadow: 0 4px 6px 0px #d9d9d9;
+  animation: apparition 2s ease-out 0.2s;
 }
 .plat__intitule {
   display: flex;
   flex-direction: column;
   font-size: 12px;
-  margin: 10px;
-  width: 90%;
+  margin: 10px 20px;
+  width: 100%;
 }
 .plat__intitule__prix {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 14px;
+  width: 100%;
+  transition: all 1s;
+}
+.plat__intitule__prix.prix {
+  transition: all 1s;
 }
 .plat__coche {
   width: 18%;
   background-color: #99E2D0;
+  overflow: hidden;
   color: #fff;
-  padding: 15px 15px;
+  padding-top: 18px;
+  padding-left: 12px;
+  border-radius: 0 20px 20px 0;
   font-size: 24px;
   display: none;
+  transform: translateX(100%);
+  transition: all 1s;
+}
+.plat__coche > .coche {
+  transform: rotate(-360deg);
+}
+.plat:hover > .plat__intitule h2 {
+  margin-right: 20%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 1s;
+}
+.plat:hover > .plat__intitule .plat__intitule__prix {
+  transition: all 1s;
+}
+.plat:hover > .plat__intitule .plat__intitule__prix > .descriptif {
+  transition: all 1s;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 20%;
+}
+.plat:hover > .plat__intitule .plat__intitule__prix > .prix {
+  transform: translateX(0);
+  transition: all 1s;
+}
+.plat:hover > .plat__coche {
+  transform: translateX(0);
+  animation: coche-viensla 1s;
+  display: block;
+}
+.plat:hover > .plat__coche > .coche {
+  transform: rotate(0deg);
+  display: block;
 }
 
 .desserts {
@@ -321,8 +418,8 @@ h2{
   width: 90%;
   margin: auto;
   margin-bottom: 20px;
-  /* animation: apparition 2s ease-out;
-   overflow: hidden;*/
+  animation: apparition 2s ease-out 0.8s;
+  overflow: hidden;
 }
 .desserts > p {
   border-bottom: 3px solid #99E2D0;
@@ -336,32 +433,76 @@ h2{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: aquamarine;
-  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 0 5px 10px 0px #e6e6e6;
+  box-shadow: 0 4px 6px 0px #d9d9d9;
+  animation: apparition 2s ease-out 0.2s;
 }
 .dessert__intitule {
   display: flex;
   flex-direction: column;
   font-size: 12px;
-  margin: 10px;
-  width: 90%;
+  margin: 10px 20px;
+  width: 100%;
 }
 .dessert__intitule__prix {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 14px;
+  width: 100%;
+  transition: all 1s;
+}
+.dessert__intitule__prix.prix {
+  transition: all 1s;
 }
 .dessert__coche {
   width: 18%;
   background-color: #99E2D0;
+  overflow: hidden;
   color: #fff;
-  padding: 15px 15px;
+  padding-top: 18px;
+  padding-left: 12px;
+  border-radius: 0 20px 20px 0;
   font-size: 24px;
   display: none;
+  transform: translateX(100%);
+  transition: all 1s;
+}
+.dessert__coche > .coche {
+  transform: rotate(-360deg);
+}
+.dessert:hover > .dessert__intitule h2 {
+  margin-right: 20%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 1s;
+}
+.dessert:hover > .dessert__intitule .dessert__intitule__prix {
+  transition: all 1s;
+}
+.dessert:hover > .dessert__intitule .dessert__intitule__prix > .descriptif {
+  transition: all 1s;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 20%;
+}
+.dessert:hover > .dessert__intitule .dessert__intitule__prix > .prix {
+  transform: translateX(0);
+  transition: all 1s;
+}
+.dessert:hover > .dessert__coche {
+  transform: translateX(0);
+  animation: coche-viensla 1s;
+  display: block;
+}
+.dessert:hover > .dessert__coche > .coche {
+  transform: rotate(0deg);
+  display: block;
 }
 
 /*.entree{
@@ -641,7 +782,7 @@ h2{
 }
 @keyframes coche-viensla {
   0% {
-    transform: translateX(50px);
+    transform: translateX(100px);
     opacity: 0;
   }
   100% {
@@ -690,12 +831,13 @@ h2{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #fff;
   background-color: #333333;
+  margin-top: 50px;
 }
 .pied-page__titre {
   font-size: 20px;
   width: 90%;
+  color: #fff;
   margin: 20px 30px;
   font-weight: 200;
 }
@@ -814,7 +956,7 @@ h2{
   width: 90%;
   text-align: center;
   margin-top: 20px;
-  font-weight: normal;
+  color: gray;
 }
 @media screen and (min-width: 768px) {
   .presentation__texte {
@@ -874,6 +1016,7 @@ h2{
   top: 25px;
   padding: 5px 10px;
   border-radius: 50%;
+  color: #fff;
   background-color: #9356DC;
 }
 @media screen and (min-width: 768px) {
@@ -887,7 +1030,7 @@ h2{
   left: 30px;
   top: 30px;
   font-size: 22px;
-  color: #4d4d4d;
+  -webkit-text-fill-color: gray;
 }
 @media screen and (min-width: 768px) {
   .etape__icone {
@@ -895,7 +1038,7 @@ h2{
   }
 }
 .etape__icone--couleur {
-  color: #9356DC;
+  -webkit-text-fill-color: #9356DC;
 }
 .etape__texte {
   position: absolute;
@@ -981,7 +1124,9 @@ h2{
   right: 15px;
   padding: 5px 10px;
   font-size: 18px;
+  color: #2c9c81;
   background-color: #99E2D0;
+  font-weight: bold;
 }
 
 .card__txt {

@@ -10,7 +10,7 @@
     }
 }
 
-
+/*propriétés du titre des sections entree plat dessert*/
 @mixin dim-intitule-plat {
     border-bottom: 3px solid $color-tertiary;
     margin-top: 20px;
@@ -18,7 +18,7 @@
     margin-bottom: 15px;
     font-size: 18px;
 }
-
+/*disposition des cards de la section*/
 @mixin disposition-menu-carte{
     display: flex;
     flex-direction: column;
@@ -27,37 +27,64 @@
     margin-bottom: 20px;
 }
 
+/*propriétés contenu de la card*/
 @mixin dim-intitules{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: aquamarine;
-    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: $color-white;
     cursor: pointer;
     border-radius: 20px;
-    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 90%);
+    box-shadow: 0 4px 6px 0px lighten($color: $color-black, $amount: 85%);
 }
+
+/*propriétés de l'intitulé de la card*/
 @mixin prop-contenu-plat{
     display: flex;
     flex-direction: column;
     font-size: 12px;
-    margin: 10px;
-    width: 90%;
+    margin: 10px 20px;
+    width: 100%;
 }
+
+/*propriétés descriptif avec prix*/
 @mixin prop-prix{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 14px;
+    width: 100%;
 }
+
+/*propriétes de la coche dans la card*/
 @mixin prop-coche{
     width: 18%;
     background-color: $color-tertiary;
+    overflow: hidden;
     color: $color-white;
-    padding: 15px 15px;
+    padding-top: 18px;
+    padding-left: 12px;
+    border-radius: 0 20px 20px 0;
     font-size: 24px;
     display: none;
+    transform: translateX(100%);
+    transition: all 1s;
 }
+
+/*@mixin proprietes-coche {
+    width: 15%;
+    font-size: 26px;
+    padding-top: 25px;
+    padding-left: 15px;
+    color: $color-white;
+    background-color: $color-tertiary;
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+    transform: translateX(100%);
+    
+}*/
+
 
 
 /*@mixin proprietes-intitule-plat{
@@ -89,19 +116,6 @@
     transform: translateX(100%);
     
    
-    
-}*/
-
-/*@mixin proprietes-coche {
-    width: 15%;
-    font-size: 26px;
-    padding-top: 25px;
-    padding-left: 15px;
-    color: $color-white;
-    background-color: $color-tertiary;
-    border-radius: 0 20px 20px 0;
-    overflow: hidden;
-    transform: translateX(100%);
     
 }*/
 

@@ -24,7 +24,7 @@
         width: 90%;
         text-align: center;
         margin-top: 20px;
-        font-weight: normal;
+        color: lighten($color: $color-black, $amount: 50%);
         @include tablette{
             font-size: 18px;
         }
@@ -80,6 +80,7 @@
         top: 25px;
         padding: 5px 10px;
         border-radius: 50%;
+        color: $color-white;
         background-color: $color-primary;
         @include tablette{
             top: -15px;
@@ -91,15 +92,13 @@
         left: 30px;
         top: 30px;
         font-size: 22px;
-        color: lighten($color: $color-black, $amount: 30%);
+        -webkit-text-fill-color: lighten($color: $color-black, $amount: 50%);
         @include tablette{
             font-size: 24px;
-            
         }
         &--couleur{
-            color: $color-primary;
+            -webkit-text-fill-color:  $color-primary;
         }
-        
     }
     &__texte{
         position: absolute;
@@ -125,15 +124,6 @@
         font-weight: 900;
         width: 90%;
         margin: 50px auto 0;
-        
-        
-        @include tablette{
-            
-        }
-        @include desktop{
-           
-            
-        }
     }
     &__cards{
         width: 90%;
@@ -145,10 +135,7 @@
         @include tablette{
             flex-flow: row wrap;
             margin-bottom: 50px;
-
         }
-        
-       
     }
 }
 .card{
@@ -174,10 +161,6 @@
     width: 100%;
     height: 190px;
     position: relative;
-    
-    
-    
-    
 }
 .card__img img{
     object-fit: cover;
@@ -186,9 +169,6 @@
     height: 100%;
     top: 0;
     border-radius: 20px 20px 0 0;
-    
-    
-
 }
 .card__img p{
     position: absolute;
@@ -196,7 +176,9 @@
     right: 15px;
     padding: 5px 10px;
     font-size: 18px;
+    color: darken($color: $color-tertiary, $amount: 35%);
     background-color: $color-tertiary;
+    font-weight: bold;
     
    
 }

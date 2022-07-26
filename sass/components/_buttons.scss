@@ -29,12 +29,6 @@
    
 
 
-    
-   
-
-
-
-
 .coeur{
     height: 45px;
     margin-right: 20px;
@@ -42,8 +36,6 @@
     width: 40px;
     overflow: hidden;
     text-align: center;
-    
-    
 }
 .coeur__remplissage{
     transition: all 2s;
@@ -62,7 +54,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: unset;
-        animation: remplissage 2000ms;
+        animation: remplissage 2000ms forwards;
     }
     
 }

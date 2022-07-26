@@ -10,7 +10,7 @@
     }
 }
 
-/*propriétés du titre des sections entree plat dessert*/
+/*titre des sections entree plat dessert*/
 @mixin dim-intitule-plat {
     border-bottom: 3px solid $color-tertiary;
     margin-top: 20px;
@@ -18,7 +18,7 @@
     margin-bottom: 15px;
     font-size: 18px;
 }
-/*disposition des cards de la section*/
+/*sections entrees plats desserts*/
 @mixin disposition-menu-carte{
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     margin-bottom: 20px;
 }
 
-/*propriétés contenu de la card*/
+/*propriétés card des sections entrees plats desserts*/
 @mixin dim-intitules{
     display: flex;
     flex-direction: row;
@@ -48,7 +48,7 @@
     width: 100%;
 }
 
-/*propriétés descriptif avec prix*/
+/*propriétés descriptif avec prix de la card*/
 @mixin prop-prix{
     display: flex;
     flex-direction: row;
@@ -59,65 +59,17 @@
 
 /*propriétes de la coche dans la card*/
 @mixin prop-coche{
-    width: 18%;
+    width: 20%;
+    max-width: 50px;
     background-color: $color-tertiary;
-    overflow: hidden;
     color: $color-white;
     padding-top: 18px;
     padding-left: 12px;
     border-radius: 0 20px 20px 0;
     font-size: 24px;
-    display: none;
-    transform: translateX(100%);
-    transition: all 1s;
+    opacity: 1;
 }
 
-/*@mixin proprietes-coche {
-    width: 15%;
-    font-size: 26px;
-    padding-top: 25px;
-    padding-left: 15px;
-    color: $color-white;
-    background-color: $color-tertiary;
-    border-radius: 0 20px 20px 0;
-    overflow: hidden;
-    transform: translateX(100%);
-    
-}*/
-
-
-
-/*@mixin proprietes-intitule-plat{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 10px;
-    
-   
-   
-    
-}*/
-/*@mixin proprietes-carte {
-    width: 100px;
-    margin: auto;
-    text-align: center;
-    margin-top: 20px 
-}*/
-
-/*@mixin proprietes-prix-plat{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 14px;
-    font-weight: normal;
-    margin-right: 10px;
-    transform: translateX(100%);
-    
-   
-    
-}*/
 
 
 

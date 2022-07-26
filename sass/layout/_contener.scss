@@ -92,8 +92,10 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
+                transition: all 1s ease-in-out;
             }
             & .entree__intitule__prix{
+                transition: all 1s ease-in-out;
                 &>.descriptif{
                     text-overflow: ellipsis;
                     overflow: hidden;
@@ -115,31 +117,33 @@
         }
     }
     @include tablette{
-        &>.entree__intitule{
-            & h2{
-                margin-right: 20%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-            & .entree__intitule__prix{
-                &>.descriptif{
+        &:hover{
+            &>.entree__intitule{
+                & h2{
+                    margin-right: 20%;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;
-                    margin-right: 20%;
                 }
-                &>.prix{
-                    transform: translateX(0);
-                    margin-right: 5px;
+                & .entree__intitule__prix{
+                    &>.descriptif{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        margin-right: 20%;
+                    }
+                    &>.prix{
+                        transform: translateX(0);
+                        margin-right: 5px;
+                    }
                 }
             }
-        }
-        &>.entree__coche{
-            animation: coche-viensla 1s forwards;
-            transform: translateX(0);
-            &>.coche{
-                transform: rotate(0deg);
+            &>.entree__coche{
+                animation: coche-viensla 1s forwards;
+                transform: translateX(0);
+                &>.coche{
+                    transform: rotate(0deg);
+                }
             }
         }
     }
@@ -163,20 +167,21 @@
     animation: apparition 2s ease-out .2s;
     transition: all 1s linear;
     &__intitule{
+        transition: all 1s ease-in-out;
         @include prop-contenu-plat;
         &__prix{
+            transition: all 1s ease-in-out;
             @include prop-prix;
             &>.prix{
                margin-right: -20px;
                transform: translateX(100%);
-               transition: all 1.5s;
+               transition: all 1s ease-in-out;
             }
         }
     }
     &__coche{
         @include prop-coche;
-        
-        transition: transform 1.5s;
+        transition: all 1s ease-in-out;
         transform: translateX(100%);
         &>.coche{
            display: block; 
@@ -191,10 +196,10 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
-                transition: all 1s;
+                transition: all 1s ease-in-out;
             }
             & .plat__intitule__prix{
-                transition: all 1s;
+                transition: all 1s ease-in-out;
                 &>.descriptif{
                     transition: all 1s;
                     text-overflow: ellipsis;
@@ -204,7 +209,6 @@
                 }
                 &>.prix{
                     transform: translateX(0);
-                    transition: all 1s linear;
                     margin-right: 5px;
                 }
             }
@@ -219,6 +223,7 @@
         
     }
     @include tablette{
+       &:hover{
         &>.plat__intitule{
             & h2{
                 margin-right: 20%;
@@ -250,6 +255,7 @@
                 transform: rotate(0deg);
             }
         }
+       }
     }
 }
 

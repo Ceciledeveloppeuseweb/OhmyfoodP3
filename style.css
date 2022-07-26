@@ -1,52 +1,10 @@
 @charset "UTF-8";
-/*propriétés du titre des sections entree plat dessert*/
-/*disposition des cards de la section*/
-/*propriétés contenu de la card*/
+/*titre des sections entree plat dessert*/
+/*sections entrees plats desserts*/
+/*propriétés card des sections entrees plats desserts*/
 /*propriétés de l'intitulé de la card*/
-/*propriétés descriptif avec prix*/
+/*propriétés descriptif avec prix de la card*/
 /*propriétes de la coche dans la card*/
-/*@mixin proprietes-coche {
-    width: 15%;
-    font-size: 26px;
-    padding-top: 25px;
-    padding-left: 15px;
-    color: $color-white;
-    background-color: $color-tertiary;
-    border-radius: 0 20px 20px 0;
-    overflow: hidden;
-    transform: translateX(100%);
-
-}*/
-/*@mixin proprietes-intitule-plat{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 10px;
-
-
-
-
-}*/
-/*@mixin proprietes-carte {
-    width: 100px;
-    margin: auto;
-    text-align: center;
-    margin-top: 20px 
-}*/
-/*@mixin proprietes-prix-plat{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 14px;
-    font-weight: normal;
-    margin-right: 10px;
-    transform: translateX(100%);
-
-
-
-}*/
 *,
 *::before,
 *::after {
@@ -66,6 +24,22 @@
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes coche-viensla {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 body {
@@ -153,7 +127,7 @@ h2{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: unset;
-  animation: remplissage 2000ms;
+  animation: remplissage 2000ms forwards;
 }
 
 @keyframes remplissage {
@@ -202,6 +176,8 @@ h2{
   background-color: #ededed;
   border-radius: 35px 35px 0 0;
   margin-top: -35px;
+  width: 100%; /*rajout*/
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .bloc-menu__carte {
@@ -213,7 +189,7 @@ h2{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   font-size: 22px;
   width: 90%;
   margin: 15px auto 0;
@@ -231,6 +207,12 @@ h2{
   margin-bottom: 20px;
   animation: apparition 2s ease-out;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .entrees {
+    width: 50%;
+    max-width: 500px;
+  }
 }
 .entrees > p {
   border-bottom: 3px solid #99E2D0;
@@ -250,73 +232,93 @@ h2{
   border-radius: 20px;
   box-shadow: 0 4px 6px 0px #d9d9d9;
   animation: apparition 2s ease-out 0.2s;
-  transition: all 1s linear;
 }
 .entree__intitule {
+  transition: all 1s ease-in-out;
   display: flex;
   flex-direction: column;
   font-size: 12px;
   margin: 10px 20px;
   width: 100%;
-  transition: all 1s;
 }
 .entree__intitule__prix {
+  transition: all 1s ease-in-out;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 14px;
   width: 100%;
-  transition: all 1s linear;
-  width: 100%;
 }
 .entree__intitule__prix > .prix {
-  transition: all 1s linear;
+  margin-right: -20px;
+  transform: translateX(100%);
+  transition: all 1s ease-in-out;
 }
 .entree__coche {
-  width: 18%;
+  width: 20%;
+  max-width: 50px;
   background-color: #99E2D0;
-  overflow: hidden;
   color: #fff;
   padding-top: 18px;
   padding-left: 12px;
   border-radius: 0 20px 20px 0;
   font-size: 24px;
-  display: none;
+  opacity: 1;
+  transition: all 1s ease-in-out;
   transform: translateX(100%);
-  transition: all 1s;
 }
 .entree__coche > .coche {
+  display: block;
   transform: rotate(-360deg);
+  transition: transform 1s;
 }
-.entree:hover > .entree__intitule h2 {
+.entree:active > .entree__intitule h2 {
   margin-right: 20%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  transition: all 1s;
 }
-.entree:hover > .entree__intitule .entree__intitule__prix {
-  transition: all 1s;
-}
-.entree:hover > .entree__intitule .entree__intitule__prix > .descriptif {
-  transition: all 1s;
+.entree:active > .entree__intitule .entree__intitule__prix > .descriptif {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   margin-right: 20%;
 }
-.entree:hover > .entree__intitule .entree__intitule__prix > .prix {
+.entree:active > .entree__intitule .entree__intitule__prix > .prix {
   transform: translateX(0);
-  transition: all 1s;
+  margin-right: 5px;
 }
-.entree:hover > .entree__coche {
+.entree:active > .entree__coche {
+  animation: coche-viensla 1s forwards;
   transform: translateX(0);
-  animation: coche-viensla 1s;
-  display: block;
 }
-.entree:hover > .entree__coche > .coche {
+.entree:active > .entree__coche > .coche {
   transform: rotate(0deg);
-  display: block;
+}
+@media screen and (min-width: 768px) {
+  .entree > .entree__intitule h2 {
+    margin-right: 20%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .entree > .entree__intitule .entree__intitule__prix > .descriptif {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 20%;
+  }
+  .entree > .entree__intitule .entree__intitule__prix > .prix {
+    transform: translateX(0);
+    margin-right: 5px;
+  }
+  .entree > .entree__coche {
+    animation: coche-viensla 1s forwards;
+    transform: translateX(0);
+  }
+  .entree > .entree__coche > .coche {
+    transform: rotate(0deg);
+  }
 }
 
 .plats {
@@ -327,6 +329,12 @@ h2{
   margin-bottom: 20px;
   animation: apparition 2s ease-out 0.4s;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .plats {
+    width: 50%;
+    max-width: 500px;
+  }
 }
 .plats > p {
   border-bottom: 3px solid #99E2D0;
@@ -346,6 +354,7 @@ h2{
   border-radius: 20px;
   box-shadow: 0 4px 6px 0px #d9d9d9;
   animation: apparition 2s ease-out 0.2s;
+  transition: all 1s linear;
 }
 .plat__intitule {
   display: flex;
@@ -360,56 +369,89 @@ h2{
   justify-content: space-between;
   font-size: 14px;
   width: 100%;
-  transition: all 1s;
 }
-.plat__intitule__prix.prix {
-  transition: all 1s;
+.plat__intitule__prix > .prix {
+  margin-right: -20px;
+  transform: translateX(100%);
+  transition: all 1.5s;
 }
 .plat__coche {
-  width: 18%;
+  width: 20%;
+  max-width: 50px;
   background-color: #99E2D0;
-  overflow: hidden;
   color: #fff;
   padding-top: 18px;
   padding-left: 12px;
   border-radius: 0 20px 20px 0;
   font-size: 24px;
-  display: none;
+  opacity: 1;
+  transition: transform 1.5s;
   transform: translateX(100%);
-  transition: all 1s;
 }
 .plat__coche > .coche {
+  display: block;
   transform: rotate(-360deg);
+  transition: transform 1s;
 }
-.plat:hover > .plat__intitule h2 {
+.plat:active > .plat__intitule h2 {
   margin-right: 20%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   transition: all 1s;
 }
-.plat:hover > .plat__intitule .plat__intitule__prix {
+.plat:active > .plat__intitule .plat__intitule__prix {
   transition: all 1s;
 }
-.plat:hover > .plat__intitule .plat__intitule__prix > .descriptif {
+.plat:active > .plat__intitule .plat__intitule__prix > .descriptif {
   transition: all 1s;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   margin-right: 20%;
 }
-.plat:hover > .plat__intitule .plat__intitule__prix > .prix {
+.plat:active > .plat__intitule .plat__intitule__prix > .prix {
   transform: translateX(0);
-  transition: all 1s;
+  transition: all 1s linear;
+  margin-right: 5px;
 }
-.plat:hover > .plat__coche {
+.plat:active > .plat__coche {
+  animation: coche-viensla 1s forwards;
   transform: translateX(0);
-  animation: coche-viensla 1s;
-  display: block;
 }
-.plat:hover > .plat__coche > .coche {
+.plat:active > .plat__coche > .coche {
   transform: rotate(0deg);
-  display: block;
+}
+@media screen and (min-width: 768px) {
+  .plat > .plat__intitule h2 {
+    margin-right: 20%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 1s;
+  }
+  .plat > .plat__intitule .plat__intitule__prix {
+    transition: all 1s;
+  }
+  .plat > .plat__intitule .plat__intitule__prix > .descriptif {
+    transition: all 1s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 20%;
+  }
+  .plat > .plat__intitule .plat__intitule__prix > .prix {
+    transform: translateX(0);
+    transition: all 1s linear;
+    margin-right: 5px;
+  }
+  .plat > .plat__coche {
+    animation: coche-viensla 1s forwards;
+    transform: translateX(0);
+  }
+  .plat > .plat__coche > .coche {
+    transform: rotate(0deg);
+  }
 }
 
 .desserts {
@@ -420,6 +462,12 @@ h2{
   margin-bottom: 20px;
   animation: apparition 2s ease-out 0.8s;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .desserts {
+    width: 50%;
+    max-width: 500px;
+  }
 }
 .desserts > p {
   border-bottom: 3px solid #99E2D0;
@@ -439,6 +487,7 @@ h2{
   border-radius: 20px;
   box-shadow: 0 4px 6px 0px #d9d9d9;
   animation: apparition 2s ease-out 0.2s;
+  transition: all 1s linear;
 }
 .dessert__intitule {
   display: flex;
@@ -453,56 +502,89 @@ h2{
   justify-content: space-between;
   font-size: 14px;
   width: 100%;
-  transition: all 1s;
 }
-.dessert__intitule__prix.prix {
-  transition: all 1s;
+.dessert__intitule__prix > .prix {
+  margin-right: -20px;
+  transform: translateX(100%);
+  transition: all 1.5s;
 }
 .dessert__coche {
-  width: 18%;
+  width: 20%;
+  max-width: 50px;
   background-color: #99E2D0;
-  overflow: hidden;
   color: #fff;
   padding-top: 18px;
   padding-left: 12px;
   border-radius: 0 20px 20px 0;
   font-size: 24px;
-  display: none;
+  opacity: 1;
+  transition: transform 1.5s;
   transform: translateX(100%);
-  transition: all 1s;
 }
 .dessert__coche > .coche {
+  display: block;
   transform: rotate(-360deg);
+  transition: transform 1s;
 }
-.dessert:hover > .dessert__intitule h2 {
+.dessert:active > .dessert__intitule h2 {
   margin-right: 20%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   transition: all 1s;
 }
-.dessert:hover > .dessert__intitule .dessert__intitule__prix {
+.dessert:active > .dessert__intitule .dessert__intitule__prix {
   transition: all 1s;
 }
-.dessert:hover > .dessert__intitule .dessert__intitule__prix > .descriptif {
+.dessert:active > .dessert__intitule .dessert__intitule__prix > .descriptif {
   transition: all 1s;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   margin-right: 20%;
 }
-.dessert:hover > .dessert__intitule .dessert__intitule__prix > .prix {
+.dessert:active > .dessert__intitule .dessert__intitule__prix > .prix {
   transform: translateX(0);
-  transition: all 1s;
+  transition: all 1s linear;
+  margin-right: 5px;
 }
-.dessert:hover > .dessert__coche {
+.dessert:active > .dessert__coche {
+  animation: coche-viensla 1s forwards;
   transform: translateX(0);
-  animation: coche-viensla 1s;
-  display: block;
 }
-.dessert:hover > .dessert__coche > .coche {
+.dessert:active > .dessert__coche > .coche {
   transform: rotate(0deg);
-  display: block;
+}
+@media screen and (min-width: 768px) {
+  .dessert:hover > .dessert__intitule h2 {
+    margin-right: 20%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 1s;
+  }
+  .dessert:hover > .dessert__intitule .dessert__intitule__prix {
+    transition: all 1s;
+  }
+  .dessert:hover > .dessert__intitule .dessert__intitule__prix > .descriptif {
+    transition: all 1s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: 20%;
+  }
+  .dessert:hover > .dessert__intitule .dessert__intitule__prix > .prix {
+    transform: translateX(0);
+    transition: all 1s linear;
+    margin-right: 5px;
+  }
+  .dessert:hover > .dessert__coche {
+    animation: coche-viensla 1s forwards;
+    transform: translateX(0);
+  }
+  .dessert:hover > .dessert__coche > .coche {
+    transform: rotate(0deg);
+  }
 }
 
 /*.entree{
@@ -766,67 +848,6 @@ h2{
         }
     }
 }*/
-@keyframes apparition {
-  0% {
-    transform: translateY(900px);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes coche-viensla {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-/*menu test*/
-.menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 20px;
-}
-
-.menu__intitule {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 10px;
-}
-
-.menu__intitule__prix {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 14px;
-  font-weight: normal;
-  margin-right: 10px;
-}
-
-.menu__coche {
-  width: 15%;
-  background-color: #99E2D0;
-  font-size: 28px;
-  text-align: center;
-  align-items: center;
-  display: none;
-}
-
 .pied-page {
   display: flex;
   flex-direction: column;
@@ -1094,12 +1115,6 @@ h2{
 @media screen and (min-width: 768px) {
   .card {
     width: 40%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .card {
-    width: 20%;
-    margin-top: 30px;
   }
 }
 

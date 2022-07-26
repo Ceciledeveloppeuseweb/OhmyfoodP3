@@ -31,6 +31,7 @@
 @mixin dim-intitules{
     display: flex;
     flex-direction: row;
+    overflow: hidden;
     justify-content: space-between;
     margin-bottom: 15px;
     background-color: $color-white;

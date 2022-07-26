@@ -56,6 +56,16 @@
         -webkit-text-stroke: unset;
         animation: remplissage 2000ms forwards;
     }
+    @include tablette{
+        &:hover{
+            background: linear-gradient(355deg, rgba(147,86,220,1) 13%, rgba(242,115,207,1) 90%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: unset;
+            animation: remplissage 2000ms forwards;
+        }
+    }
     
 }
 

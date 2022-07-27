@@ -73,7 +73,7 @@
             transition: all .5s ease-in-out;
             @include prop-prix;
             &> .descriptif{
-                width: 95%;/**/
+                width: 95%;
                 text-overflow: ellipsis;
                 overflow: visible;
                 white-space: nowrap;

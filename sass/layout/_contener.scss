@@ -46,7 +46,7 @@
     }
 }
 
-.entrees{
+.bloc-cards{
     @include disposition-menu-carte;
     animation: apparition 2s ease-out;
     overflow: hidden;
@@ -59,7 +59,7 @@
     }
 }
 
-.entree{
+.card{
     @include dim-intitules;
     animation: apparition 2s ease-out .2s;
     &__intitule{
@@ -86,7 +86,7 @@
         }
     }
     &:active{
-        &>.entree__intitule{
+        &>.card__intitule{
             & h2{
                 margin-right: 20%;
                 text-overflow: ellipsis;
@@ -94,7 +94,7 @@
                 white-space: nowrap;
                 transition: all 1s ease-in-out;
             }
-            & .entree__intitule__prix{
+            & .card__intitule__prix{
                 transition: all 1s ease-in-out;
                 &>.descriptif{
                     text-overflow: ellipsis;
@@ -108,7 +108,7 @@
                 }
             }
         }
-        &>.entree__coche{
+        &>.card__coche{
             animation: coche-viensla 1s forwards;
             transform: translateX(0);
             &>.coche{
@@ -118,14 +118,14 @@
     }
     @include tablette{
         &:hover{
-            &>.entree__intitule{
+            &>.card__intitule{
                 & h2{
                     margin-right: 20%;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;
                 }
-                & .entree__intitule__prix{
+                & .card__intitule__prix{
                     &>.descriptif{
                         text-overflow: ellipsis;
                         overflow: hidden;
@@ -138,7 +138,7 @@
                     }
                 }
             }
-            &>.entree__coche{
+            &>.card__coche{
                 animation: coche-viensla 1s forwards;
                 transform: translateX(0);
                 &>.coche{
@@ -149,7 +149,7 @@
     }
 }
 
-.plats{
+/*.plats{
     @include disposition-menu-carte;
     animation: apparition 2s ease-out .4s;
     overflow: hidden;
@@ -184,10 +184,10 @@
         transition: all 1s ease-in-out;
         transform: translateX(100%);
         &>.coche{
-           display: block; 
+           display: block; */
           /* transform: rotateX(-360deg);*/
            /*transition: transform 1s;*/
-           transform: translateX(100px);
+         /*  transform: translateX(100px);
            animation: rotation 1s ease-in-out forwards;
         }
     }
@@ -368,7 +368,7 @@
             }
         }
     }
-}
+}*/
 
 
 

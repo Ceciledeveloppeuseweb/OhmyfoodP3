@@ -22,9 +22,6 @@
         background-color:  lighten($color: $color-black, $amount: 93%);
         border-radius: 35px 35px 0 0;
         margin-top: -35px;
-        width: 100%;/*rajout*/
-        overflow: hidden;
-        
         @include tablette{
             border-radius: 0;
             
@@ -63,26 +60,31 @@
     @include dim-intitules;
     animation: apparition 2s ease-out .2s;
     &__intitule{
-        transition: all 1s ease-in-out;
+        transition: all .5s ease-in-out;
         @include prop-contenu-plat;
         &__prix{
-            transition: all 1s ease-in-out;
+            transition: all .5s ease-in-out;
             @include prop-prix;
-            &>.prix{
+            &> .descriptif{
+                width: 100%;/**/
+            }
+            &> .prix{
                margin-right: -20px;
                transform: translateX(100%);
-               transition: all 1s ease-in-out;
+               transition: all .5s ease-in-out;
             }
         }
     }
     &__coche{
         @include prop-coche;
-        transition: all 1s ease-in-out;
+        transition: all .5s ease-in-out;
         transform: translateX(100%);
         &>.coche{
-           display: block; 
-           transform: rotate(-360deg);
-           transition: transform 1s;
+           display: block;
+           transition: all .5s ease-in-out; 
+            position: absolute;
+            left: 25%;
+            top: 35%;
         }
     }
     &:active{
@@ -92,10 +94,10 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
-                transition: all 1s ease-in-out;
+                transition: all .5s ease-in-out;
             }
             & .carte__intitule__prix{
-                transition: all 1s ease-in-out;
+                transition: all .5s ease-in-out;
                 &>.descriptif{
                     text-overflow: ellipsis;
                     overflow: hidden;
@@ -109,10 +111,11 @@
             }
         }
         &>.carte__coche{
-            animation: coche-viensla 1s forwards;
             transform: translateX(0);
+            transition: all .5s ease-in-out;
             &>.coche{
-                transform: rotate(0deg);
+               animation: rotation 1s ease-in-out both;
+               transition: all .5s ease-in-out;
             }
         }
     }
@@ -124,13 +127,14 @@
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;
+                    transition: all .5s ease-in-out;
                 }
                 & .carte__intitule__prix{
                     &>.descriptif{
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
-                        margin-right: 20%;
+                        margin-right: 25%;
                     }
                     &>.prix{
                         transform: translateX(0);
@@ -139,236 +143,16 @@
                 }
             }
             &>.carte__coche{
-                animation: coche-viensla 1s forwards;
                 transform: translateX(0);
+                transition: all .5s ease-in-out;
                 &>.coche{
-                    transform: rotate(0deg);
+                  animation: rotation 1s ease-in-out both;
+                  transition: all .5s ease-in-out;
                 }
             }
         }
     }
 }
-
-/*.plats{
-    @include disposition-menu-carte;
-    animation: apparition 2s ease-out .4s;
-    overflow: hidden;
-    @include tablette{
-        width: 50%;
-        max-width: 500px;
-    }
-    &>p{
-        @include dim-intitule-plat;
-    }
-}
-
-.plat{
-    @include dim-intitules;
-    animation: apparition 2s ease-out .2s;
-    transition: all 1s linear;
-    &__intitule{
-        transition: all 1s ease-in-out;
-        @include prop-contenu-plat;
-        &__prix{
-            transition: all 1s ease-in-out;
-            @include prop-prix;
-            &>.prix{
-               margin-right: -20px;
-               transform: translateX(100%);
-               transition: all 1s ease-in-out;
-            }
-        }
-    }
-    &__coche{
-        @include prop-coche;
-        transition: all 1s ease-in-out;
-        transform: translateX(100%);
-        &>.coche{
-           display: block; */
-          /* transform: rotateX(-360deg);*/
-           /*transition: transform 1s;*/
-         /*  transform: translateX(100px);
-           animation: rotation 1s ease-in-out forwards;
-        }
-    }
-    &:active{
-        &>.plat__intitule{
-            & h2{
-                margin-right: 20%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                transition: all 1s ease-in-out;
-            }
-            & .plat__intitule__prix{
-                transition: all 1s ease-in-out;
-                &>.descriptif{
-                    transition: all 1s;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    margin-right: 20%;
-                }
-                &>.prix{
-                    transform: translateX(0);
-                    margin-right: 5px;
-                }
-            }
-        }
-        &>.plat__coche{
-            animation: coche-viensla 1s forwards;
-            transform: translateX(0);
-            &>.coche{
-                transform: rotate(0deg);
-            }
-        }
-        
-    }
-    @include tablette{
-       &:hover{
-        &>.plat__intitule{
-            & h2{
-                margin-right: 20%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                transition: all 1s;
-            }
-            & .plat__intitule__prix{
-                transition: all 1s;
-                &>.descriptif{
-                    transition: all 1s;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    margin-right: 20%;
-                }
-                &>.prix{
-                    transform: translateX(0);
-                    transition: all 1s linear;
-                    margin-right: 5px;
-                }
-            }
-        }
-        &>.plat__coche{
-            animation: coche-viensla 1s forwards;
-            transform: translateX(0);
-            &>.coche{
-                transform: rotate(0deg);
-            }
-        }
-       }
-    }
-}
-
-.desserts{
-    @include disposition-menu-carte;
-    animation: apparition 2s ease-out .8s;
-    overflow: hidden;
-    @include tablette{
-        width: 50%;
-        max-width: 500px;
-    }
-    &>p{
-        @include dim-intitule-plat;
-    }
-}
-
-.dessert{
-    @include dim-intitules;
-    animation: apparition 2s ease-out .2s;
-    transition: all 1s linear;
-    &__intitule{
-        @include prop-contenu-plat;
-        &__prix{
-            @include prop-prix;
-            &>.prix{
-               margin-right: -20px;
-               transform: translateX(100%);
-               transition: all 1.5s;
-            }
-        }
-    }
-    &__coche{
-        @include prop-coche;
-        transition: transform 1.5s;
-        transform: translateX(100%);
-        &>.coche{
-           display: block; 
-           transform: rotate(-360deg);
-           transition: transform 1s;
-        }
-    }
-    &:active{
-        &>.dessert__intitule{
-            & h2{
-                margin-right: 20%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                transition: all 1s;
-            }
-            & .dessert__intitule__prix{
-                transition: all 1s;
-                &>.descriptif{
-                    transition: all 1s;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    margin-right: 20%;
-                }
-                &>.prix{
-                    transform: translateX(0);
-                    transition: all 1s linear;
-                    margin-right: 5px;
-                }
-            }
-        }
-        &>.dessert__coche{
-            animation: coche-viensla 1s forwards;
-            transform: translateX(0);
-            &>.coche{
-                transform: rotate(0deg);
-            }
-        }
-        
-    }
-    @include tablette{
-        &:hover{
-            &>.dessert__intitule{
-                & h2{
-                    margin-right: 20%;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    transition: all 1s;
-                }
-                & .dessert__intitule__prix{
-                    transition: all 1s;
-                    &>.descriptif{
-                        transition: all 1s;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        margin-right: 20%;
-                    }
-                    &>.prix{
-                        transform: translateX(0);
-                        transition: all 1s linear;
-                        margin-right: 5px;
-                    }
-                }
-            }
-            &>.dessert__coche{
-                animation: coche-viensla 1s forwards;
-                transform: translateX(0);
-                &>.coche{
-                    transform: rotate(0deg);
-                }
-            }
-        }
-    }
-}*/
 
 
 

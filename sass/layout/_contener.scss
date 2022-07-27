@@ -185,8 +185,10 @@
         transform: translateX(100%);
         &>.coche{
            display: block; 
-           transform: rotate(-360deg);
-           transition: transform 1s;
+          /* transform: rotateX(-360deg);*/
+           /*transition: transform 1s;*/
+           transform: translateX(100px);
+           animation: rotation 1s ease-in-out forwards;
         }
     }
     &:active{

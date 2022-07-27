@@ -66,7 +66,7 @@
     height: 80px;
     margin: 15px auto;
     border-radius: 25px;
-    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 85%);
+    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 90%);
     &--couleur{
         background-color: lighten($color: $color-primary, $amount: 35%);
     }
@@ -147,7 +147,7 @@
     height: 270px;
     margin-bottom: 25px;
     border-radius: 20px;
-    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 85%);
+    box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 90%);
     
     @include tablette{
         width: 40%;
@@ -193,13 +193,6 @@
     }
 
 }
-
-
-
-
-
-
-
 
 
 .chargement {

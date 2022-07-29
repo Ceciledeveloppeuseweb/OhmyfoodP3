@@ -22,9 +22,9 @@
         background-color:  lighten($color: $color-black, $amount: 93%);
         border-radius: 35px 35px 0 0;
         margin-top: -35px;
+        width: 100%;
         @include tablette{
             border-radius: 0;
-            
         }
     }
 }
@@ -44,12 +44,31 @@
 }
 
 .bloc-cartes{
-    @include disposition-menu-carte;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    @include desktop{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+    }
+}
+
+
+
+.menu{
+    @include disposition-menu;
     animation: apparition 2s ease-out;
     overflow: hidden;
     @include tablette{
         width: 50%;
         max-width: 500px;
+    }
+    @include desktop{
+        width: 30%;
     }
     &>p{
         @include dim-intitule-plat;

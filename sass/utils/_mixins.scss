@@ -19,12 +19,12 @@
     font-size: 18px;
 }
 /*sections entrees plats desserts*/
-@mixin disposition-menu-carte{
+@mixin disposition-menu{
     display: flex;
     flex-direction: column;
     width: 90%;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+    
 }
 
 /*propriétés card des sections entrees plats desserts*/

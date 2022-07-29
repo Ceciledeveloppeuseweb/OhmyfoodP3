@@ -139,7 +139,7 @@
             }
         }
         &>.carte__coche{
-            transform: translateX(-2%);
+            transform: translateX(0);
             transition: all .5s ease-in-out;
             &>.coche{
                animation: rotation .5s ease-in-out both;
@@ -172,7 +172,7 @@
                 }
             }
             &>.carte__coche{
-                transform: translateX(-2%);
+                transform: translateX(0);
                 transition: all .5s ease-in-out;
                 &>.coche{
                   animation: rotation .5s ease-in-out both;

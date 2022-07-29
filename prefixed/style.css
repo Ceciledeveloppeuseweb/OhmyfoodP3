@@ -86,28 +86,13 @@ p em {
   font-weight: bold;
 }
 
-/*p em{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
 
-}
-
-p{
-    font-size: 16px;
-}
-h2{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-
-}*/
 .btn {
   color: white;
   padding: 15px 10px;
   width: 50%;
   max-width: 300px;
   background: linear-gradient(355deg, rgb(147, 86, 220) 13%, rgb(242, 115, 207) 90%);
-  /* background-image: linear-gradient( $color-secondary , $color-primary );*/
   margin: 30px auto;
   border-radius: 30px;
   height: 55px;

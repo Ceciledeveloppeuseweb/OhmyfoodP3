@@ -7,6 +7,7 @@
     margin: 30px auto 70px;
     border-radius: 30px;
     height: 55px;
+    
     font-size: 18px;
     border: none;
     cursor: pointer;
@@ -18,7 +19,8 @@
         box-shadow: 0 5px 10px 0px lighten($color: $color-black, $amount: 60%);
     }
     &--accueil {
-        width: 62%;
+        width: 100%;
+       padding: 15px 20px;
     }
     @include tablette {
         font-size: 20px;

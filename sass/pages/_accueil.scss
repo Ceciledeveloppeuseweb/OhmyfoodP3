@@ -30,6 +30,11 @@
         }
     }
 }
+.lien-explorer{
+    text-decoration: none;
+    color: $color-white;
+}
+
 .fonctionnement{
     display: flex;
     flex-direction: column;
@@ -113,7 +118,7 @@
         }
     }
 }
-.restos{
+#restos{
     
     display: flex;
     flex-direction: column;

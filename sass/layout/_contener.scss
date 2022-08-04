@@ -48,6 +48,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    overflow: hidden;
     @include desktop{
         display: flex;
         flex-direction: row;
@@ -72,6 +73,14 @@
     &>p{
         @include dim-intitule-plat;
     }
+    
+    
+}
+.menu--delais05s{
+    animation-delay: .5s;
+}
+.menu--delais1s{
+    animation-delay: 1s;
 }
 
 .carte{

@@ -118,8 +118,9 @@
         }
     }
 }
-#restos{
-    
+.restos{
+    width: 90%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     margin-top: 30px;
@@ -127,19 +128,21 @@
     &__titre{
         font-size: 28px;
         font-weight: 900;
-        width: 90%;
-        margin: 50px auto 0;
+        width: 100%;
+        margin: 50px auto 30px;
     }
     &__cards{
-        width: 90%;
-        margin: auto;
-        margin-top: 15px;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 50px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         @include tablette{
+            display: flex;
             flex-flow: row wrap;
             margin-bottom: 50px;
+            
         }
     }
 }
@@ -156,6 +159,7 @@
     
     @include tablette{
         width: 40%;
+       
     }
    
 }

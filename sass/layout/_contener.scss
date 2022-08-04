@@ -107,26 +107,32 @@
                 margin-left: 20px;
             }
             &> .prix{
-               margin-right: -7%;
+              /* margin-right: -7%;*/
                transform: translateX(100%);
                transition: all .5s ease-in-out;
                width: 10%;
+              position: absolute;
+              right: 60px;
             }
         }
     }
     &__coche{
         @include prop-coche;
-        transition: all .5s ease-in-out;
+        transition: transform .5s ease-in-out;
         transform: translateX(100%);
         &>.coche{
            display: block;
            transition: all .5s ease-in-out; 
-            position: absolute;
+           position: absolute;
             left: 25%;
             top: 35%;
+            
+            
         }
     }
-    &:active{
+    
+   /* &:active{
+        
         &>.carte__intitule{
             & h2{
                 padding-right: 20%;
@@ -153,12 +159,13 @@
         &>.carte__coche{
             transform: translateX(0);
             transition: all .5s ease-in-out;
-            &>.coche{
+            /*animation: coche-viensla .5s forwards;*/
+          /*  &>.coche{
                animation: rotation .5s ease-in-out both;
                transition: all .5s ease-in-out;
             }
         }
-    }
+    }*/
     @include tablette{
         &:hover{
             &>.carte__intitule{
@@ -195,6 +202,57 @@
     }
 }
 
+/*test input*/
+
+.vignette{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+   
+}
+
+input{
+    display: none;
+}
+input:checked + .vignette{
+    &>.carte__intitule{
+        & h2{
+            padding-right: 20%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: all .5s ease-in-out;
+        }
+        & .carte__intitule__prix{
+            transition: all .5s ease-in-out;
+            &>.descriptif{
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                margin-right: 20%;
+            }
+            &>.prix{
+                transform: translateX(0);
+                margin-right: 5px;
+            }
+        }
+    }
+    &>.carte__coche{
+        display: block;
+        transform: translateX(0);
+        transition: all .5s ease-in-out;
+       /* animation: coche-viensla .5s;*/
+        &>.coche{
+            display: block;
+          animation: rotation .5s ease-in-out both;
+          transition: all .5s ease-in-out;
+        }
+    }
+}
 
 
 

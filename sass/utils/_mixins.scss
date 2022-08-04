@@ -30,6 +30,7 @@
 @mixin dim-intitules{
     display: flex;
     flex-direction: row;
+    width: 100%;
     overflow: hidden;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -44,8 +45,9 @@
     display: flex;
     flex-direction: column;
     font-size: 12px;
-    margin: 10px 20px;
-    width: 100%;
+    margin: 10px 0;
+    width: 80%;
+   
 }
 
 /*propriétés descriptif- prix de la card*/
@@ -59,12 +61,13 @@
 
 /*propriétes de la coche dans la card*/
 @mixin prop-coche{
-    width: 25%;
+    width: 15%;
     max-width: 50px;
     background-color: $color-tertiary;
     color: $color-white;
     font-size: 24px;
     position: relative;
+    margin-left: 10px;
    
     
    

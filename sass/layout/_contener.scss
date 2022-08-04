@@ -92,22 +92,25 @@
         & h2{
             width: 95%;
             text-overflow: ellipsis;
-            overflow: visible;
+            overflow: hidden;
             white-space: nowrap;
+            margin-left: 20px;
         }
         &__prix{
             transition: all .5s ease-in-out;
             @include prop-prix;
             &> .descriptif{
-                width: 95%;
+                width: 100%;
                 text-overflow: ellipsis;
-                overflow: visible;
+                overflow: hidden;
                 white-space: nowrap;
+                margin-left: 20px;
             }
             &> .prix{
-               margin-right: -20px;
+               margin-right: -7%;
                transform: translateX(100%);
                transition: all .5s ease-in-out;
+               width: 10%;
             }
         }
     }
@@ -160,7 +163,7 @@
         &:hover{
             &>.carte__intitule{
                 & h2{
-                    margin-right: 20%;
+                    padding-right: 20%;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;

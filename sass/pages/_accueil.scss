@@ -119,8 +119,8 @@
     }
 }
 .restos{
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    
     display: flex;
     flex-direction: column;
     margin-top: 30px;
@@ -132,8 +132,8 @@
         margin: 50px auto 30px;
     }
     &__cards{
-        width: 100%;
-        margin: 0;
+        width: 90%;
+        margin: auto;
         padding-bottom: 50px;
         display: flex;
         flex-direction: column;

@@ -37,6 +37,7 @@
     width: 40px;
     overflow: hidden;
     text-align: center;
+    transition: all 2s;
 }
 .coeur__remplissage{
     transition: all 2s;
@@ -49,7 +50,7 @@
     -webkit-text-fill-color: $color-white;
     -webkit-text-stroke-width: 1px;
     position: relative;
-    &:active{
+    &:hover{
         background: linear-gradient(355deg, rgba(147,86,220,1) 13%, rgba(242,115,207,1) 90%);
         background-clip: text;
         -webkit-background-clip: text;
@@ -57,17 +58,6 @@
         -webkit-text-stroke: unset;
         animation: remplissage 2000ms forwards;
     }
-    @include tablette{
-        &:hover{
-            background: linear-gradient(355deg, rgba(147,86,220,1) 13%, rgba(242,115,207,1) 90%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -webkit-text-stroke: unset;
-            animation: remplissage 2000ms forwards;
-        }
-    }
-    
 }
 
 

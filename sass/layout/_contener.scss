@@ -93,6 +93,7 @@
             overflow: hidden;
             white-space: nowrap;
             margin-left: 20px;
+            transition: all .5s ease-in-out;
         }
         &__prix{
             transition: all .5s ease-in-out;
@@ -103,10 +104,11 @@
                 overflow: hidden;
                 white-space: nowrap;
                 margin-left: 20px;
+                transition: all .5s;
             }
             &> .prix{
                 transform: translateX(100%);
-                transition: all .5s ease-in-out;
+                transition: transform .5s ease-in-out;
                 width: 10%;
                 margin-right: -15px
             }
@@ -118,21 +120,24 @@
         transform: translateX(100%);
         &>.coche{
            display: block;
-           transition: all .5s ease-in-out; 
+           transition: transform .5s ease-in-out;
+           transform: rotate(0); 
            position: absolute;
             left: 25%;
             top: 35%;
+            
         }
     }
-    &:active{
-        
+    &:hover{
+        transition: all .5s;
         &>.carte__intitule{
+            transition: all .5s;
             & h2{
                 padding-right: 20%;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
-                transition: all .5s ease-in-out;
+               /* transition: all .5s ease-in-out;*/
             }
             & .carte__intitule__prix{
                 transition: all .5s ease-in-out;
@@ -149,85 +154,26 @@
             }
         }
         &>.carte__coche{
+            display: block;
             transform: translateX(0);
             transition: all .5s ease-in-out;
             &>.coche{
-                animation: rotation .5s ease-in-out both;
-                transition: all .5s ease-in-out;
-            }
-        }
-        
-    }
-    @include tablette{
-        &:hover{
-            &>.carte__intitule{
-                & h2{
-                    padding-right: 20%;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    transition: all .5s ease-in-out;
-                }
-                & .carte__intitule__prix{
-                    transition: all .5s ease-in-out;
-                    &>.descriptif{
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        margin-right: 20%;
-                    }
-                    &>.prix{
-                        transform: translateX(0);
-                        margin-right: 5px;
-                    }
-                }
-            }
-            &>.carte__coche{
-                transform: translateX(0);
-                transition: all .5s ease-in-out;
-                &>.coche{
-                  animation: rotation .5s ease-in-out both;
-                  transition: all .5s ease-in-out;
-                }
+                display: block;
+                transform: rotate(360deg);
+             /* animation: rotation .5s ease-in-out both;*/
+              transition: all .5s ease-in-out;
             }
         }
     }
 }
 
-input:checked + .vignette{
-    &>.carte__intitule{
-        & h2{
-            padding-right: 20%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-            transition: all .5s ease-in-out;
-        }
-        & .carte__intitule__prix{
-            transition: all .5s ease-in-out;
-            &>.descriptif{
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                margin-right: 20%;
-            }
-            &>.prix{
-                transform: translateX(0);
-                margin-right: 5px;
-            }
-        }
-    }
-    &>.carte__coche{
-        display: block;
-        transform: translateX(0);
-        transition: all .5s ease-in-out;
-        &>.coche{
-            display: block;
-          animation: rotation .5s ease-in-out both;
-          transition: all .5s ease-in-out;
-        }
-    }
-}
+
+
+
+
+
+
+
 
 
 

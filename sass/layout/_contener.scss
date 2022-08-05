@@ -137,7 +137,6 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
-               /* transition: all .5s ease-in-out;*/
             }
             & .carte__intitule__prix{
                 transition: all .5s ease-in-out;
@@ -160,8 +159,7 @@
             &>.coche{
                 display: block;
                 transform: rotate(360deg);
-             /* animation: rotation .5s ease-in-out both;*/
-              transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
             }
         }
     }
